@@ -437,55 +437,313 @@ footer{
   <div class="container">
     <div class="section-head reveal">
       <h2>Living Survivability Ecosystem</h2>
-      <p>Research surfaces, verification engines, and lifeline protocols orbit the core reactor.</p>
+      <p>
+        Public proof surfaces, deterministic recovery engines,
+        continuity infrastructure, and fragment intelligence
+        connected into one survivability architecture.
+      </p>
     </div>
+
     <div class="ecosystem-wrap">
+
+      <!-- LEFT : REACTOR MAP -->
       <div class="eco-map reveal">
-        <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" aria-label="Ecosystem reactor map">
+
+        <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
+
           <defs>
-            <linearGradient id="linkGrad" x1="0" x2="1"><stop offset="0%" stop-color="#00e5ff"/><stop offset="100%" stop-color="#ff6a00"/></linearGradient>
-            <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="linkGrad" x1="0" x2="1">
+              <stop offset="0%" stop-color="#00e5ff"/>
+              <stop offset="100%" stop-color="#ff6a00"/>
+            </linearGradient>
+
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="6" result="b"/>
+              <feMerge>
+                <feMergeNode in="b"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
           </defs>
-          <!-- links -->
-          <path class="link" d="M400 260 C 300 180, 200, 140 160"/>
+
+          <!-- CONNECTIONS -->
+
+          <path class="link" d="M400 260 C 300 180, 200 140 160 160"/>
           <path class="link" d="M400 260 C 320 320, 220 360, 180 420"/>
           <path class="link" d="M400 260 C 480 200, 580 190, 660 150"/>
           <path class="link" d="M400 260 C 500 300, 600 340, 680 380"/>
           <path class="link" d="M400 260 C 380 140, 420 80, 400 40"/>
-          <!-- nodes -->
-          <g class="node-core" filter="url(#glow)">
-            <circle cx="400" cy="260" r="48" fill="rgba(0,229,255,.12)" stroke="#00e5ff" stroke-width="2"/>
-            <circle cx="400" cy="260" r="22" fill="#00e5ff"/>
-            <text x="400" y="328" text-anchor="middle" fill="#8aa2b8" font-size="13" letter-spacing="0.1em">XPADI-SGDS</text>
-          </g>
-          <g>
-            <circle cx="140" cy="160" r="16" fill="#02060f" stroke="#00e5ff" stroke-width="1.5"/><text x="140" y="130" text-anchor="middle" fill="#eaf6ff" font-size="12">XPADI-ProofCheck</text>
-          </g>
-          <g>
-            <circle cx="180" cy="420" r="16" fill="#02060f" stroke="#00e5ff" stroke-width="1.5"/><text x="180" y="450" text-anchor="middle" fill="#eaf6ff" font-size="12">XPADI_Proof_Engine_V1</text>
-          </g>
-          <g>
-            <circle cx="660" cy="150" r="16" fill="#02060f" stroke="#ff6a00" stroke-width="1.5"/><text x="660" y="120" text-anchor="middle" fill="#eaf6ff" font-size="12">digital-lifeline</text>
-          </g>
-          <g>
-            <circle cx="680" cy="380" r="16" fill="#02060f" stroke="#ff6a00" stroke-width="1.5"/><text x="680" y="410" text-anchor="middle" fill="#eaf6ff" font-size="12">XLifelineAI</text>
-          </g>
-          <g>
-            <circle cx="400" cy="40" r="16" fill="#02060f" stroke="#00e5ff" stroke-width="1.5"/><text x="400" y="20" text-anchor="middle" fill="#eaf6ff" font-size="12">dfg-demo-lab</text>
-          </g>
-          <!-- pulses -->
-          <circle class="pulse-dot" r="4"><animateMotion dur="6s" repeatCount="indefinite" path="M400 260 C 300 180, 200 200, 140 160"/></circle>
-          <circle class="pulse-dot" r="4"><animateMotion dur="7s" repeatCount="indefinite" path="M400 260 C 500 300, 600 340, 680 380"/></circle>
-          <circle class="pulse-dot" r="4"><animateMotion dur="5s" repeatCount="indefinite" path="M400 260 C 480 200, 580 190, 660 150"/></circle>
+
+          <!-- CENTER CORE -->
+
+          <a href="https://github.com/raajmandale/XPADI-SGDS"
+             target="_blank">
+
+            <g class="node-core"
+               filter="url(#glow)"
+               style="cursor:pointer">
+
+              <circle cx="400" cy="260" r="48"
+                fill="rgba(0,229,255,.12)"
+                stroke="#00e5ff"
+                stroke-width="2"/>
+
+              <circle cx="400" cy="260" r="22"
+                fill="#00e5ff"/>
+
+              <text x="400"
+                    y="328"
+                    text-anchor="middle"
+                    fill="#8aa2b8"
+                    font-size="13"
+                    letter-spacing="0.1em">
+
+                XPADI-SGDS
+
+              </text>
+
+            </g>
+
+          </a>
+
+          <!-- PROOFCHECK -->
+
+          <a href="https://github.com/raajmandale/XPADI-ProofCheck"
+             target="_blank">
+
+            <g style="cursor:pointer">
+
+              <circle cx="140"
+                      cy="160"
+                      r="16"
+                      fill="#02060f"
+                      stroke="#00e5ff"
+                      stroke-width="1.5"/>
+
+              <text x="140"
+                    y="130"
+                    text-anchor="middle"
+                    fill="#eaf6ff"
+                    font-size="12">
+
+                XPADI-ProofCheck
+
+              </text>
+
+            </g>
+
+          </a>
+
+          <!-- PROOF ENGINE -->
+
+          <a href="https://github.com/raajmandale/XPADI_Proof_Engine_V1"
+             target="_blank">
+
+            <g style="cursor:pointer">
+
+              <circle cx="180"
+                      cy="420"
+                      r="16"
+                      fill="#02060f"
+                      stroke="#00e5ff"
+                      stroke-width="1.5"/>
+
+              <text x="180"
+                    y="450"
+                    text-anchor="middle"
+                    fill="#eaf6ff"
+                    font-size="12">
+
+                XPADI_Proof_Engine_V1
+
+              </text>
+
+            </g>
+
+          </a>
+
+          <!-- DIGITAL LIFELINE -->
+
+          <a href="https://github.com/raajmandale/digital-lifeline"
+             target="_blank">
+
+            <g style="cursor:pointer">
+
+              <circle cx="660"
+                      cy="150"
+                      r="16"
+                      fill="#02060f"
+                      stroke="#ff6a00"
+                      stroke-width="1.5"/>
+
+              <text x="660"
+                    y="120"
+                    text-anchor="middle"
+                    fill="#eaf6ff"
+                    font-size="12">
+
+                digital-lifeline
+
+              </text>
+
+            </g>
+
+          </a>
+
+          <!-- XLIFELINE -->
+
+          <a href="https://github.com/raajmandale/XLifelineAI"
+             target="_blank">
+
+            <g style="cursor:pointer">
+
+              <circle cx="680"
+                      cy="380"
+                      r="16"
+                      fill="#02060f"
+                      stroke="#ff6a00"
+                      stroke-width="1.5"/>
+
+              <text x="680"
+                    y="410"
+                    text-anchor="middle"
+                    fill="#eaf6ff"
+                    font-size="12">
+
+                XLifelineAI
+
+              </text>
+
+            </g>
+
+          </a>
+
+          <!-- DFG -->
+
+          <a href="https://github.com/raajmandale/dfg-demo-lab"
+             target="_blank">
+
+            <g style="cursor:pointer">
+
+              <circle cx="400"
+                      cy="40"
+                      r="16"
+                      fill="#02060f"
+                      stroke="#00e5ff"
+                      stroke-width="1.5"/>
+
+              <text x="400"
+                    y="20"
+                    text-anchor="middle"
+                    fill="#eaf6ff"
+                    font-size="12">
+
+                dfg-demo-lab
+
+              </text>
+
+            </g>
+
+          </a>
+
+          <!-- MOVING SIGNALS -->
+
+          <circle class="pulse-dot" r="4">
+            <animateMotion
+              dur="6s"
+              repeatCount="indefinite"
+              path="M400 260 C 300 180, 200 200, 140 160"/>
+          </circle>
+
+          <circle class="pulse-dot" r="4">
+            <animateMotion
+              dur="7s"
+              repeatCount="indefinite"
+              path="M400 260 C 500 300, 600 340, 680 380"/>
+          </circle>
+
+          <circle class="pulse-dot" r="4">
+            <animateMotion
+              dur="5s"
+              repeatCount="indefinite"
+              path="M400 260 C 480 200, 580 190, 660 150"/>
+          </circle>
+
         </svg>
+
       </div>
+
+      <!-- RIGHT : REPOSITORY CARDS -->
+
       <div class="repo-list reveal">
-        <div class="repo-card"><h4>XPADI-ProofCheck</h4><p>Public verification surface for reconstruction proofs and integrity attestations.</p></div>
-        <div class="repo-card"><h4>XPADI_Proof_Engine_V1</h4><p>Deterministic proof generation for fragment graphs and recovery events.</p></div>
-        <div class="repo-card"><h4>digital-lifeline</h4><p>Continuity protocol scaffolding for post-damage operational resilience.</p></div>
-        <div class="repo-card"><h4>XLifelineAI</h4><p>Intelligence layer for threat-aware survivability orchestration.</p></div>
-        <div class="repo-card"><h4>dfg-demo-lab</h4><p>Interactive demonstrations of fragment intelligence and reconstruction.</p></div>
+
+        <a class="repo-card"
+           href="https://github.com/raajmandale/XPADI-ProofCheck"
+           target="_blank">
+
+          <h4>XPADI-ProofCheck</h4>
+
+          <p>
+            Public survivability verification surface for
+            deterministic recovery proof generation.
+          </p>
+
+        </a>
+
+        <a class="repo-card"
+           href="https://github.com/raajmandale/XPADI_Proof_Engine_V1"
+           target="_blank">
+
+          <h4>XPADI_Proof_Engine_V1</h4>
+
+          <p>
+            Fragment-graph reconstruction proof engine
+            and recovery validation infrastructure.
+          </p>
+
+        </a>
+
+        <a class="repo-card"
+           href="https://github.com/raajmandale/digital-lifeline"
+           target="_blank">
+
+          <h4>digital-lifeline</h4>
+
+          <p>
+            Origin continuity architecture and post-damage
+            operational survivability scaffolding.
+          </p>
+
+        </a>
+
+        <a class="repo-card"
+           href="https://github.com/raajmandale/XLifelineAI"
+           target="_blank">
+
+          <h4>XLifelineAI</h4>
+
+          <p>
+            Runtime continuity intelligence layer for
+            AI-aware survivability orchestration.
+          </p>
+
+        </a>
+
+        <a class="repo-card"
+           href="https://github.com/raajmandale/dfg-demo-lab"
+           target="_blank">
+
+          <h4>dfg-demo-lab</h4>
+
+          <p>
+            Deterministic Fragment Graph experimentation,
+            visualization, and reconstruction research.
+          </p>
+
+        </a>
+
       </div>
+
     </div>
   </div>
 </section>
