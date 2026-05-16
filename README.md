@@ -198,8 +198,7 @@ XPADI-SGDS explores infrastructure survivability after failure rather than assum
 ---
 ## 🔗 Full Benchmark Documentation
 
-👉 [OPEN BENCHMARK DOCUMENTATION](./docs/BENCHMARK.md)
-
+👉 [OPEN BENCHMARK DOCUMENTATION](https://github.com/raajmandale/XPADI-SGDS/blob/main/docs/BENCHMARK.md)
 ---
 ### 🧬 Ecosystem Architecture
 
