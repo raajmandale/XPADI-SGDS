@@ -198,7 +198,7 @@ XPADI-SGDS explores infrastructure survivability after failure rather than assum
 ---
 ## 🔗 Full Benchmark Documentation
 
-👉 OPEN RECOVERY SIGNAL DOCUMENTATION](docs/RECOVERY_SIGNALS.md)
+[👉 OPEN RECOVERY SIGNAL DOCUMENTATION](docs/RECOVERY_SIGNALS.md)
 ---
 ### 🧬 Ecosystem Architecture
 
