@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">XPADI-SGDS Glass Edition 2050 Hero</title>
+<desc id="desc">Animated future glass infrastructure hero for XPADI-SGDS with owner recovery core, fragment streams, and continuity rings.</desc>
+<defs>
+  <radialGradient id="bgA" cx="50%" cy="20%" r="80%">
+    <stop offset="0%" stop-color="#173a61"/>
+    <stop offset="48%" stop-color="#07172f"/>
+    <stop offset="100%" stop-color="#030613"/>
+  </radialGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#9ef7ff"/>
+    <stop offset="44%" stop-color="#58ffb1"/>
+    <stop offset="74%" stop-color="#ff9f43"/>
+    <stop offset="100%" stop-color="#f472b6"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#123b65" stop-opacity="0.58"/>
+    <stop offset="48%" stop-color="#08172e" stop-opacity="0.72"/>
+    <stop offset="100%" stop-color="#190d25" stop-opacity="0.62"/>
+  </linearGradient>
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="8" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="bigGlow">
+    <feGaussianBlur stdDeviation="28" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
+    <path d="M54 0H0V54" fill="none" stroke="#9ef7ff" stroke-opacity="0.055" stroke-width="1"/>
+  </pattern>
+  <style>
+    .kicker{font:800 20px Arial,Helvetica,sans-serif;letter-spacing:5px;fill:#9ef7ff}
+    .title{font:900 116px Arial,Helvetica,sans-serif;fill:#f8fbff}
+    .sub{font:700 34px Arial,Helvetica,sans-serif;fill:#dbeafe}
+    .body{font:500 25px Arial,Helvetica,sans-serif;fill:#bdd7ee}
+    .micro{font:800 14px Arial,Helvetica,sans-serif;letter-spacing:2px;fill:#9ef7ff}
+    .ring{transform-origin:1380px 540px;animation:spin 22s linear infinite}
+    .ring2{transform-origin:1380px 540px;animation:spinR 26s linear infinite}
+    .ring3{transform-origin:1380px 540px;animation:spin 34s linear infinite}
+    .flow{animation:dash 9s linear infinite}
+    .pulse{animation:pulse 3.8s ease-in-out infinite}
+    .float{animation:float 7s ease-in-out infinite}
+    .scan{animation:scan 5.8s ease-in-out infinite}
+    .frag1{animation:frag 6s ease-in-out infinite}
+    .frag2{animation:frag 7.5s ease-in-out infinite}
+    .frag3{animation:frag 9s ease-in-out infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes spinR{to{transform:rotate(-360deg)}}
+    @keyframes dash{to{stroke-dashoffset:-240}}
+    @keyframes pulse{0%,100%{opacity:.34}50%{opacity:1}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @keyframes scan{0%,100%{opacity:.08;transform:translateX(-90px)}50%{opacity:.32;transform:translateX(130px)}}
+    @keyframes frag{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(-18px);opacity:1}}
+  </style>
+</defs>
+
+<rect width="1920" height="1080" fill="url(#bgA)"/>
+<rect width="1920" height="1080" fill="url(#grid)"/>
+
+<circle cx="1450" cy="210" r="330" fill="#54d6ff" opacity=".075" class="pulse"/>
+<circle cx="280" cy="840" r="280" fill="#58ffb1" opacity=".065" class="pulse"/>
+<circle cx="1110" cy="860" r="250" fill="#ff9f43" opacity=".045" class="pulse"/>
+
+<g class="float">
+  <rect x="110" y="118" width="1080" height="780" rx="48" fill="url(#glass)" stroke="url(#edge)" stroke-width="2.3" filter="url(#glow)"/>
+  <rect x="150" y="160" width="1000" height="700" rx="38" fill="#020817" opacity=".28" stroke="#ffffff" stroke-opacity=".08"/>
+</g>
+
+<text x="190" y="230" class="kicker">SURVIVABILITY-GOVERNED DATA SYSTEMS</text>
+<text x="190" y="360" class="title">XPADI-SGDS</text>
+<text x="194" y="430" class="sub">Attack Success ≠ Data Loss</text>
+<text x="194" y="526" class="body">Glass Edition 2050 surface for XPADI-DISK style survivability:</text>
+<text x="194" y="570" class="body">fragment-aware continuity • deterministic rebuild • owner recovery</text>
+<text x="194" y="614" class="body">and proof-driven infrastructure for failure-first systems.</text>
+
+<g filter="url(#glow)">
+  <rect x="194" y="704" width="174" height="60" rx="30" fill="#54d6ff"/>
+  <text x="246" y="742" font-family="Arial" font-size="20" font-weight="900" fill="#03111f">PROOF</text>
+  <rect x="392" y="704" width="194" height="60" rx="30" fill="#58ffb1"/>
+  <text x="442" y="742" font-family="Arial" font-size="20" font-weight="900" fill="#03111f">REBUILD</text>
+  <rect x="610" y="704" width="194" height="60" rx="30" fill="#ff9f43"/>
+  <text x="666" y="742" font-family="Arial" font-size="20" font-weight="900" fill="#03111f">VERIFY</text>
+  <rect x="828" y="704" width="184" height="60" rx="30" fill="#f472b6"/>
+  <text x="880" y="742" font-family="Arial" font-size="20" font-weight="900" fill="#03111f">SURVIVE</text>
+</g>
+
+<g filter="url(#bigGlow)">
+  <circle cx="1380" cy="540" r="255" fill="none" stroke="url(#edge)" stroke-width="2.6" stroke-dasharray="28 22" class="ring"/>
+  <circle cx="1380" cy="540" r="190" fill="none" stroke="#9ef7ff" stroke-opacity=".75" stroke-width="2.1" stroke-dasharray="16 18" class="ring2"/>
+  <circle cx="1380" cy="540" r="124" fill="none" stroke="#ff9f43" stroke-opacity=".82" stroke-width="2.1" stroke-dasharray="10 12" class="ring3"/>
+</g>
+
+<g filter="url(#glow)">
+  <circle cx="1380" cy="540" r="82" fill="#061120" stroke="url(#edge)" stroke-width="3.2"/>
+  <text x="1325" y="530" class="micro">OWNER</text>
+  <text x="1302" y="568" font-family="Arial" font-size="28" font-weight="900" fill="#ffffff">RECOVERY</text>
+</g>
+
+<g stroke="url(#edge)" stroke-width="3.2" fill="none" filter="url(#glow)">
+  <path d="M1188 540 C1245 540 1285 540 1310 540" stroke-dasharray="15 12" class="flow"/>
+  <path d="M1015 734 C1140 765 1260 750 1340 638" stroke-dasharray="13 12" class="flow"/>
+  <path d="M1030 260 C1185 236 1312 316 1355 448" stroke-dasharray="13 12" class="flow"/>
+</g>
+
+<g filter="url(#glow)">
+  <rect x="1260" y="300" width="42" height="42" rx="10" fill="#9ef7ff" opacity=".8" class="frag1"/>
+  <rect x="1518" y="390" width="34" height="34" rx="8" fill="#58ffb1" opacity=".8" class="frag2"/>
+  <rect x="1510" y="660" width="46" height="46" rx="12" fill="#ff9f43" opacity=".82" class="frag3"/>
+  <rect x="1210" y="700" width="32" height="32" rx="8" fill="#f472b6" opacity=".75" class="frag2"/>
+</g>
+
+<g class="scan">
+  <rect x="0" y="0" width="140" height="1080" fill="#9ef7ff" opacity=".12"/>
+</g>
+</svg>

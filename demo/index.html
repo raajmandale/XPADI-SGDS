@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>XPADI-SGDS™ — Ultra Glass Stable Reactor</title>
+<style>
+:root{
+  --bg:#020611;
+  --panel:#071426;
+  --panel2:#0b1d35;
+  --blue:#28a7ff;
+  --cyan:#78ddff;
+  --orange:#ff8a24;
+  --text:#f7fbff;
+  --muted:#9fb4ce;
+  --line:rgba(120,221,255,.18);
+  --orangeLine:rgba(255,138,36,.26);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  color:var(--text);
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(40,167,255,.22),transparent 28%),
+    radial-gradient(circle at 100% 14%,rgba(255,138,36,.14),transparent 26%),
+    radial-gradient(circle at 50% 85%,rgba(40,167,255,.10),transparent 35%),
+    linear-gradient(180deg,#020611 0%,#061426 48%,#020611 100%);
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background-image:
+    linear-gradient(rgba(120,221,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(120,221,255,.045) 1px,transparent 1px);
+  background-size:54px 54px;
+  animation:gridShift 26s linear infinite;
+  mask-image:linear-gradient(to bottom,black 0%,transparent 94%);
+}
+body:after{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(circle at 24% 32%,rgba(40,167,255,.13),transparent 22%),
+    radial-gradient(circle at 76% 28%,rgba(255,138,36,.10),transparent 20%),
+    radial-gradient(circle at 50% 80%,rgba(120,221,255,.07),transparent 28%);
+  filter:blur(18px);
+  animation:atmo 18s ease-in-out infinite;
+}
+@keyframes gridShift{to{transform:translateY(54px)}}
+@keyframes atmo{0%,100%{transform:scale(1)}50%{transform:translate(2%,-1%) scale(1.04)}}
+a{text-decoration:none;color:inherit}
+.wrap{position:relative;z-index:2;width:min(1360px,94vw);margin:auto}
+.telemetry{
+  position:sticky;top:0;z-index:99;height:40px;display:flex;align-items:center;overflow:hidden;
+  background:rgba(2,8,18,.90);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(120,221,255,.16);
+}
+.track{
+  display:flex;gap:44px;white-space:nowrap;padding-left:100%;
+  animation:ticker 36s linear infinite;
+  font-size:11px;font-weight:900;letter-spacing:.28em;text-transform:uppercase;
+}
+@keyframes ticker{to{transform:translateX(-50%)}}
+.blue{color:var(--cyan);text-shadow:0 0 12px rgba(120,221,255,.65)}
+.orange{color:var(--orange);text-shadow:0 0 12px rgba(255,138,36,.55)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0 20px}
+.brand{display:flex;gap:14px;align-items:center;font-size:24px;font-weight:950;letter-spacing:-.05em}
+.mark{width:44px;height:44px;border:1px solid rgba(120,221,255,.32);border-radius:15px;display:grid;place-items:center;color:var(--cyan);background:radial-gradient(circle,rgba(40,167,255,.22),rgba(7,20,38,.72));box-shadow:0 0 34px rgba(40,167,255,.16)}
+.brand small{display:block;margin-top:5px;font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:rgba(120,221,255,.78);font-weight:900}
+.links{display:flex;gap:24px}
+.links a{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#d6eeff;opacity:.82}
+.pill{border:1px solid rgba(40,167,255,.26);background:rgba(7,20,38,.62);border-radius:999px;padding:12px 18px;color:var(--cyan);font-weight:900;font-size:12px}
+.glass{
+  border:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(11,29,53,.88),rgba(3,9,20,.76));
+  backdrop-filter:blur(26px);
+  border-radius:34px;
+  box-shadow:0 34px 120px rgba(0,0,0,.56),inset 0 1px 0 rgba(255,255,255,.055);
+}
+.hero{min-height:calc(100vh - 90px);display:grid;grid-template-columns:1fr 1.15fr .82fr;gap:22px;align-items:stretch;padding:30px 0 60px}
+.copy{padding:56px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.copy:before{content:"";position:absolute;inset:-30%;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.065),transparent 58%);animation:shine 9s ease-in-out infinite}
+@keyframes shine{0%,65%,100%{transform:translateX(-72%)}78%{transform:translateX(72%)}}
+.kicker{display:inline-flex;gap:12px;align-items:center;width:max-content;border:1px solid rgba(120,221,255,.24);border-radius:999px;background:rgba(40,167,255,.06);padding:12px 16px;color:var(--cyan);font-size:11px;font-weight:950;letter-spacing:.34em;text-transform:uppercase}
+.kicker i{width:8px;height:8px;border-radius:99px;background:var(--orange);box-shadow:0 0 22px rgba(255,138,36,.8)}
+h1{font-size:clamp(70px,8vw,130px);line-height:.82;margin:34px 0 0;letter-spacing:-.09em;font-weight:950}
+h1 span{display:block;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.thesis{margin-top:28px;font-size:clamp(28px,3vw,44px);font-weight:950;letter-spacing:-.04em}
+.thesis strong{color:var(--orange)}
+.lead{margin-top:24px;color:#bdd0e6;font-size:18px;line-height:1.8}
+.actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{border-radius:999px;padding:15px 21px;font-weight:950;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#02101e;box-shadow:0 0 42px rgba(40,167,255,.24)}
+.btn.alt{background:rgba(255,138,36,.07);border:1px solid rgba(255,138,36,.34);color:var(--orange);box-shadow:none}
+.reactor{position:relative;min-height:690px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at center,rgba(40,167,255,.15),transparent 44%),linear-gradient(135deg,rgba(10,22,40,.88),rgba(3,9,20,.78))}
+.orbit{position:absolute;border-radius:999px;border:1px dashed rgba(120,221,255,.28);animation:spin linear infinite}
+.o1{width:650px;height:650px;animation-duration:52s}.o2{width:510px;height:510px;animation-duration:34s;animation-direction:reverse}.o3{width:370px;height:370px;border-color:rgba(255,138,36,.26);animation-duration:22s}.o4{width:242px;height:242px;animation-duration:16s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.beam{position:absolute;height:2px;width:580px;background:linear-gradient(90deg,transparent,rgba(120,221,255,.88),transparent);filter:drop-shadow(0 0 14px rgba(120,221,255,.8));animation:beam 4.6s ease-in-out infinite}
+.b1{transform:rotate(13deg)}.b2{transform:rotate(-19deg);background:linear-gradient(90deg,transparent,rgba(255,138,36,.72),transparent);filter:drop-shadow(0 0 14px rgba(255,138,36,.65));animation-delay:1.35s}
+@keyframes beam{0%,100%{opacity:.18;scale:.92}50%{opacity:.95;scale:1.08}}
+.core{width:282px;height:282px;border-radius:999px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(120,221,255,.22);background:radial-gradient(circle,rgba(40,167,255,.26),transparent 58%),rgba(3,9,20,.96);box-shadow:0 0 150px rgba(40,167,255,.30),0 0 66px rgba(255,138,36,.12),inset 0 0 74px rgba(40,167,255,.10);animation:core 5s ease-in-out infinite}
+@keyframes core{0%,100%{transform:translateY(0);box-shadow:0 0 115px rgba(40,167,255,.23),0 0 45px rgba(255,138,36,.08)}50%{transform:translateY(-9px);box-shadow:0 0 172px rgba(40,167,255,.38),0 0 86px rgba(255,138,36,.18)}}
+.core b{font-size:44px;line-height:.92}.core small{display:block;margin-bottom:10px;font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--cyan);font-weight:950}
+.node{position:absolute;width:58px;height:58px;border-radius:18px;background:rgba(11,29,53,.84);border:1px solid rgba(120,221,255,.27);box-shadow:0 0 42px rgba(40,167,255,.24);animation:float 5s ease-in-out infinite}
+.n1{top:92px;left:310px}.n2{top:230px;right:92px;background:rgba(255,138,36,.15);border-color:rgba(255,138,36,.30);animation-delay:1s}.n3{bottom:112px;left:135px;animation-delay:2s}.n4{bottom:170px;right:220px;background:rgba(255,138,36,.10);animation-delay:3s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.status{padding:30px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.status-title{color:var(--orange);font-size:12px;font-weight:950;letter-spacing:.34em;text-transform:uppercase}
+.status-item{display:grid;grid-template-columns:44px 1fr;gap:14px;border-bottom:1px solid rgba(120,221,255,.09);padding:8px 0}
+.icon{width:42px;height:42px;border:1px solid rgba(120,221,255,.26);border-radius:14px;display:grid;place-items:center;color:var(--cyan);background:rgba(40,167,255,.06)}
+.status-item b{display:block;font-size:15px;margin-bottom:4px}.status-item p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}.status-thesis{border:1px solid var(--orangeLine);border-radius:20px;padding:18px;background:rgba(255,138,36,.055);color:var(--orange);font-weight:950}
+.section{margin:84px 0}.eyebrow{color:var(--cyan);font-size:11px;font-weight:950;letter-spacing:.42em;text-transform:uppercase}.section h2{font-size:clamp(40px,5vw,78px);line-height:.92;letter-spacing:-.065em;margin:14px 0 30px}
+.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.card{min-height:220px;padding:24px;border-radius:26px;border:1px solid rgba(120,221,255,.14);background:linear-gradient(135deg,rgba(11,29,53,.86),rgba(3,9,20,.76));position:relative;overflow:hidden;transition:.3s}.card:hover{transform:translateY(-8px);border-color:rgba(255,138,36,.34);box-shadow:0 0 42px rgba(40,167,255,.13)}
+.card:after{content:"";position:absolute;left:-120%;top:0;width:70%;height:100%;background:linear-gradient(90deg,transparent,rgba(120,221,255,.08),transparent);transform:skewX(-18deg);animation:sig 6s linear infinite}
+@keyframes sig{to{left:180%}}
+.card .num{color:var(--cyan);font-size:12px;letter-spacing:.35em;font-weight:950}.card h3{margin:22px 0 14px;font-size:22px}.card p{color:var(--muted);font-size:14px;line-height:1.65}
+.state{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}.state-card,.identity-card,.repo{border:1px solid rgba(120,221,255,.15);background:linear-gradient(135deg,rgba(11,29,53,.88),rgba(3,9,20,.78));border-radius:24px;padding:22px;position:relative;overflow:hidden}.state-card h4{color:var(--cyan);font-size:10px;letter-spacing:.28em;text-transform:uppercase}.state-card h3{font-size:32px;margin:16px 0 10px}.state-card p,.identity-card p,.repo p{color:var(--muted);font-size:14px;line-height:1.6}
+.constellation{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.map{min-height:560px;position:relative;overflow:hidden}.map svg{position:absolute;inset:0;width:100%;height:100%}
+.repo-list{display:grid;gap:14px}.repo{transition:.3s}.repo:hover{transform:translateX(6px) translateY(-4px);border-color:rgba(255,138,36,.42);box-shadow:0 0 44px rgba(40,167,255,.18)}.repo small{display:block;color:var(--cyan);font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:950}.repo b{display:block;margin:9px 0;font-size:21px}
+.identity{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.identity-card b{font-size:15px}
+.why{padding:62px;border-radius:38px;border:1px solid rgba(120,221,255,.15);background:linear-gradient(135deg,rgba(10,18,34,.96),rgba(3,9,20,.92));box-shadow:0 30px 100px rgba(0,0,0,.45)}.why p{max-width:980px;font-size:21px;line-height:1.95;color:#b8c8db}
+footer{text-align:center;padding:44px 0 80px;color:#7e91ac}.footer-line{font-size:20px;color:var(--blue);margin-bottom:16px}
+@media(max-width:1220px){.hero,.constellation{grid-template-columns:1fr}.status{display:grid;grid-template-columns:1fr 1fr}.grid6{grid-template-columns:1fr 1fr 1fr}.state{grid-template-columns:1fr 1fr}.identity{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:720px){.links{display:none}.nav{flex-direction:column;align-items:flex-start;gap:14px}.copy{padding:32px}h1{font-size:64px}.grid6,.state,.identity,.status{grid-template-columns:1fr}.reactor{min-height:460px}.node{display:none}}
+</style>
+</head>
+<body>
+<div class="telemetry"><div class="track"><span class="blue">SIGNAL ACTIVE</span><span class="orange">THREAT DETECTED</span><span class="blue">RECOVERY READY</span><span class="blue">GRAPH STABLE</span><span class="orange">REBUILD IN PROGRESS</span><span class="blue">CONTINUITY MAINTAINED</span><span class="blue">SIGNAL ACTIVE</span><span class="orange">THREAT DETECTED</span><span class="blue">RECOVERY READY</span><span class="blue">GRAPH STABLE</span></div></div>
+<div class="wrap">
+<nav class="nav"><div class="brand"><div class="mark">⬡</div><div>XPADI-SGDS™<small>Survivability-Governed Data Systems</small></div></div><div class="links"><a href="#flow">Process</a><a href="#ecosystem">Ecosystem</a><a href="#research">Research</a><a href="#boundary">Boundary</a></div><div class="pill">Public Research Surface</div></nav>
+<section class="hero">
+<div class="glass copy"><div class="kicker"><i></i> Continuity Infrastructure</div><h1>XPADI<span>SGDS</span></h1><div class="thesis">Attack Success <strong>≠</strong> Data Loss</div><p class="lead">A survivability-governed infrastructure identity exploring deterministic reconstruction, recovery readiness, continuity intelligence, and post-damage operational resilience.</p><div class="actions"><a class="btn" href="#flow">Explore Process</a><a class="btn alt" href="#ecosystem">Explore Ecosystem</a></div></div>
+<div class="glass reactor"><div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="orbit o4"></div><div class="beam b1"></div><div class="beam b2"></div><div class="node n1"></div><div class="node n2"></div><div class="node n3"></div><div class="node n4"></div><div class="core"><div><small>Owner</small><b>RECOVERY</b><small style="margin-top:14px;color:#9db0c9">Continuity Reactor</small></div></div></div>
+<aside class="glass status"><div class="status-title">Infrastructure Reality</div><div class="status-item"><div class="icon">⬢</div><div><b>Replication Copies Corruption</b><p>Replication can duplicate destructive failure states.</p></div></div><div class="status-item"><div class="icon">▤</div><div><b>Backups Can Collapse</b><p>Recovery chains fail under deletion, encryption, dependency loss, or delay.</p></div></div><div class="status-item"><div class="icon">◎</div><div><b>Integrity ≠ Survivability</b><p>Checksums verify changes, not continuity after damage.</p></div></div><div class="status-thesis">CORE THESIS · Attack Success ≠ Data Loss</div></aside>
+</section>
+<section class="section" id="flow"><div class="eyebrow">Living Reconstruction Flow</div><h2>Failure enters. Continuity exits.</h2><div class="grid6"><div class="card"><div class="num">01</div><h3>DETECT</h3><p>Identify corruption, deletion, ransomware damage, or continuity weakness.</p></div><div class="card"><div class="num">02</div><h3>SPLIT</h3><p>Think in survivability-aware fragment structures instead of fragile full-copy dependency.</p></div><div class="card"><div class="num">03</div><h3>DISTRIBUTE</h3><p>Reduce single-point exposure and avoid one complete recoverable target.</p></div><div class="card"><div class="num">04</div><h3>REBUILD</h3><p>Recover through deterministic reconstruction rather than blind restore assumptions.</p></div><div class="card"><div class="num">05</div><h3>VERIFY</h3><p>Generate proof confidence and recovery readiness signals.</p></div><div class="card"><div class="num">06</div><h3>CONTINUE</h3><p>Move from incident recovery into survivable operational continuity.</p></div></div><div class="state"><div class="state-card"><h4>Recovery Readiness</h4><h3>97.2%</h3><p>Continuity reconstruction pathways active.</p></div><div class="state-card"><h4>Fragment Graph</h4><h3>STABLE</h3><p>Deterministic reconstruction graph connected.</p></div><div class="state-card"><h4>Survivability Signal</h4><h3>VERIFIED</h3><p>Operational continuity maintained.</p></div><div class="state-card"><h4>Owner State</h4><h3>ONLINE</h3><p>Recovery authority presence active.</p></div></div></section>
+<section class="section constellation" id="ecosystem"><div class="glass map"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="wire" x1="0" x2="1"><stop offset="0%" stop-color="#78ddff"/><stop offset="55%" stop-color="#28a7ff"/><stop offset="100%" stop-color="#ff8a24"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M450 300 C250 180 150 150 100 110" stroke="url(#wire)" stroke-width="4" stroke-dasharray="14 10" fill="none" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;-160" dur="5s" repeatCount="indefinite"/></path><path d="M450 300 C650 180 760 150 810 110" stroke="url(#wire)" stroke-width="4" stroke-dasharray="14 10" fill="none" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;-160" dur="5s" repeatCount="indefinite"/></path><path d="M450 300 C250 420 160 470 100 520" stroke="url(#wire)" stroke-width="4" stroke-dasharray="14 10" fill="none" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;-160" dur="5s" repeatCount="indefinite"/></path><path d="M450 300 C650 420 760 470 810 520" stroke="url(#wire)" stroke-width="4" stroke-dasharray="14 10" fill="none" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;-160" dur="5s" repeatCount="indefinite"/></path><rect x="302" y="218" width="296" height="164" rx="30" fill="rgba(8,14,28,.94)" stroke="url(#wire)" filter="url(#glow)"/><text x="450" y="294" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="white">XPADI</text><text x="450" y="334" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#78ddff">SGDS</text><g fill="rgba(12,22,40,.86)" stroke="#78ddff" stroke-width="2"><rect x="45" y="65" width="250" height="90" rx="22"/><rect x="610" y="65" width="250" height="90" rx="22"/><rect x="45" y="470" width="250" height="90" rx="22"/><rect x="610" y="470" width="250" height="90" rx="22"/><rect x="325" y="470" width="250" height="90" rx="22" stroke="#ff8a24"/></g><g font-family="Arial" font-size="17" font-weight="900" fill="white"><text x="170" y="112" text-anchor="middle">ProofCheck</text><text x="735" y="112" text-anchor="middle">Proof Engine</text><text x="170" y="522" text-anchor="middle">digital-lifeline</text><text x="735" y="522" text-anchor="middle">dfg-demo-lab</text><text x="450" y="522" text-anchor="middle">XLifelineAI</text></g></svg></div><div class="repo-list"><a class="repo" href="https://github.com/raajmandale/XPADI-ProofCheck"><small>Main Surface</small><b>XPADI-ProofCheck™</b><p>Recovery Intelligence and Survivability Proof surface.</p></a><a class="repo" href="https://github.com/raajmandale/XPADI_Proof_Engine_V1"><small>Proof Engine</small><b>XPADI_Proof_Engine_V1</b><p>Protect → attack → reconstruct → verify.</p></a><a class="repo" href="https://github.com/raajmandale/digital-lifeline"><small>Origin</small><b>digital-lifeline</b><p>Origin survivability architecture seed.</p></a><a class="repo" href="https://github.com/raajmandale/XLifelineAI"><small>AI Continuity</small><b>XLifelineAI</b><p>AI runtime continuity and memory resilience.</p></a><a class="repo" href="https://github.com/raajmandale/dfg-demo-lab"><small>Research</small><b>dfg-demo-lab</b><p>Deterministic Fragment Graph research/demo layer.</p></a></div></section>
+<section class="section" id="research"><div class="eyebrow">Research & Identity Layer</div><h2>Proof surfaces connect into a public credibility graph.</h2><div class="identity"><div class="identity-card"><b>GitHub</b><p>Code, proofs, demos, and public build evidence.</p></div><div class="identity-card"><b>Zenodo</b><p>DOI-backed preservation and research record continuity.</p></div><div class="identity-card"><b>SSRN</b><p>Public research distribution and survivability paper surface.</p></div><div class="identity-card"><b>ORCID</b><p>Researcher identity continuity and authorship graph.</p></div><div class="identity-card"><b>Wikidata</b><p>Structured identity backbone and external indexing layer.</p></div><div class="identity-card"><b>Website</b><p>Founder surface connecting projects, research, and proof artifacts.</p></div></div></section>
+<section class="section why"><div class="eyebrow">Why XPADI Exists</div><h2>Modern systems still assume recovery will work when pressure arrives.</h2><p>Failure is no longer rare. Deletion scales. Corruption propagates. Recovery assumptions collapse silently. Replication can duplicate damage. Backups can disappear. Continuity chains break under operational stress. XPADI-SGDS explores survivability after damage — not only prevention before it.</p></section>
+<section class="section glass" id="boundary"><div class="eyebrow">Public-safe boundary</div><h2>Shows direction, not private mechanism.</h2><p style="color:#b8c8db;font-size:19px;line-height:1.75;max-width:980px">This ultra-glass reactor surface communicates continuity philosophy, ecosystem structure, recovery posture, and proof/recovery direction without exposing proprietary recovery internals, authority logic, or sensitive reconstruction mechanisms.</p></section>
+<footer><div class="footer-line">Continuity is the Future. Survivability is the Foundation.</div>XPADI-SGDS™ · Ultra Glass Stable Reactor · Infrastructure Continuity Direction</footer>
+</div>
+</body>
+</html>
+<footer class="xpadi-footer">
+    <div class="footer-grid"></div>
+
+    <div class="footer-content">
+        <div class="footer-title">
+            XPADI-SGDS™
+        </div>
+
+        <div class="footer-sub">
+            Survivability-Governed Data Systems
+        </div>
+
+        <div class="footer-signal">
+            ATTACK SUCCESS ≠ DATA LOSS
+        </div>
+
+        <div class="footer-links">
+            <a href="../README.md">README</a>
+            <a href="../docs/ecosystem-map.md">Ecosystem</a>
+            <a href="../assets/svg/hero.svg">SVG Reactor</a>
+        </div>
+    </div>
+</footer>
