@@ -149,7 +149,6 @@ The XPADI-SGDS reactor surface simulates:
 - cinematic continuity infrastructure
 
 ---
-
 # 📊 Benchmark & Recovery Signals
 
 XPADI-SGDS includes public-safe survivability benchmark demonstrations covering:
@@ -161,15 +160,48 @@ XPADI-SGDS includes public-safe survivability benchmark demonstrations covering:
 - operational failure exposure
 - proof-oriented infrastructure interpretation
 
-See:
+---
 
-```text
-docs/BENCHMARK.md
-```
+## 🧪 Recovery Benchmark Snapshot
+
+| Signal | State |
+|---|---|
+| Recovery Readiness | 19% |
+| Continuity Confidence | 25% |
+| Failure Exposure | HIGH |
+| Recovery Friction | HIGH |
+| Fragment Survivability Spread | LIMITED |
+| Integrity Verification | BLAKE3 VERIFIED |
 
 ---
 
-# 🧬 Ecosystem Architecture
+## ⚠ Recovery Intelligence
+
+- Single-point dependency detected
+- Recovery pathway confidence reduced
+- Structural survivability concentration observed
+- Fragment survivability spread is limited
+- Operational continuity posture is fragile
+
+---
+## 🛰 Benchmark Interpretation
+
+The benchmark surface demonstrates how survivability posture may degrade when:
+
+- reconstruction pathways depend on fragile structures
+- continuity distribution remains limited
+- operational recovery relies on single infrastructure chains
+- fragment survivability visibility is insufficient
+
+XPADI-SGDS explores infrastructure survivability after failure rather than assuming recovery success by default.
+
+---
+## 🔗 Full Benchmark Documentation
+
+👉 [OPEN BENCHMARK DOCUMENTATION](./docs/BENCHMARK.md)
+
+---
+### 🧬 Ecosystem Architecture
 
 <div align="center">
 
@@ -196,7 +228,7 @@ without exposing:
 
 ---
 
-# ⚙ Living Reconstruction Flow
+### ⚙ Living Reconstruction Flow
 
 <div align="center">
 
