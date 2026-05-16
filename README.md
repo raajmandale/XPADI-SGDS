@@ -89,24 +89,23 @@ The system direction investigates how continuity infrastructure may behave when:
 XPADI-SGDS focuses on continuity after failure — not only prevention before failure.
 
 ---
-## 📸 Proof Surface Screenshots
+### 📸 Proof Surface Screenshots
 
 <div align="center">
 
-### 01 — Hero Recovery Surface
-<img src="./assets/screenshots/01_Hero_Recovery_Surface.png" width="100%" alt="XPADI Hero Recovery Surface"/>
+### 01 ▸ CLI Engine Execution
 
-### 02 — CLI Engine Execution
 <img src="./assets/screenshots/02_CLI_Engine_Execution.png" width="100%" alt="XPADI CLI Engine Execution"/>
 
-### 03 — Recovery Intelligence
-<img src="./assets/screenshots/03_Recovery_Intelligence.png" width="100%" alt="XPADI Recovery Intelligence"/>
+---
+### 02 ▸ Recovery Intelligence & Public-Safe Proof Layer
 
-### 04 — Proof Layer & Public-Safe Notes
-<img src="./assets/screenshots/04_Proof_Layer_and_PublicSafe.png" width="100%" alt="XPADI Proof Layer and Public Safe Notes"/>
+<img src="./assets/screenshots/04_Proof_Layer_and_PublicSafe.png" width="100%" alt="XPADI Recovery Intelligence"/>
 
-### 05 — Cyber Report Surface
-<img src="./assets/screenshots/05_Cyber_Report_Surface.png" width="100%" alt="XPADI Cyber Report Surface"/>
+---
+### 03 ▸ Cyber Proof Report Surface
+
+<img src="./assets/screenshots/05_Cyber_Report_Surface.png" width="100%" alt="XPADI Cyber Proof Surface"/>
 
 </div>
 
@@ -139,9 +138,9 @@ XPADI-SGDS explores survivability after:
 
 ### 🌌 Cinematic Continuity Reactor
 
-### OPEN LIVE SURFACE
+<div align="center">
 
-https://raajmandale.github.io/XPADI-SGDS/demo/
+[![OPEN LIVE REACTOR](https://img.shields.io/badge/OPEN-LIVE%20REACTOR-0B1220?style=for-the-badge&logo=github)](https://raajmandale.github.io/XPADI-SGDS/demo/)
 
 </div>
 
@@ -156,9 +155,22 @@ The XPADI-SGDS reactor surface simulates:
 - fragment graph visibility
 - operational resilience posture
 - cinematic continuity infrastructure
-
 ---
+### 📊 Benchmark & Recovery Signals
 
+XPADI-SGDS includes public-safe survivability benchmark demonstrations covering:
+
+- reconstruction posture
+- recovery-readiness telemetry
+- continuity confidence
+- fragment survivability signals
+- operational failure exposure
+- proof-oriented infrastructure interpretation
+
+See:
+
+docs/BENCHMARK.md
+---
 ## 🧬 Ecosystem Architecture
 
 <div align="center">
@@ -333,9 +345,9 @@ AI Infrastructure • Survivability Systems • Runtime Intelligence
 - 🧾 https://orcid.org/0009-0005-9810-1655
 
 ---
-
 <div align="center">
 
-# Continuity is the Future. Survivability is the Foundation.
+### ATTACK SUCCESS ≠ DATA LOSS
+## Continuity is the Future. Survivability is the Foundation.
 
 </div>
