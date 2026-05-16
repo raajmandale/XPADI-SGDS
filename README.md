@@ -1,18 +1,18 @@
 <div align="center">
 
-<img src="./assets/svg/hero.svg" width="100%"/>
+<img src="./assets/svg/hero.svg" width="100%" alt="XPADI-SGDS Reactor"/>
 
 # XPADI-SGDS™
 
-# ATTACK SUCCESS ≠ DATA LOSS
+## ATTACK SUCCESS ≠ DATA LOSS
 
 ### Survivability-Governed Data Systems
 
-A cinematic survivability infrastructure surface exploring deterministic reconstruction, recovery readiness, continuity intelligence, fragment-aware recovery, and post-damage operational resilience.
+A cinematic survivability infrastructure ecosystem exploring deterministic reconstruction, recovery readiness, continuity intelligence, fragment-aware recovery, and post-damage operational resilience.
 
 ---
 
-### ⚡ [OPEN REACTOR SURFACE](./demo/index.html)
+[⚡ OPEN LIVE REACTOR SURFACE](./demo/index.html)
 
 </div>
 
@@ -20,24 +20,24 @@ A cinematic survivability infrastructure surface exploring deterministic reconst
 
 # 🌌 XPADI-SGDS
 
-XPADI-SGDS is not a backup product.
+XPADI-SGDS is not a backup tool.
 
-It is not a cloud storage platform.
+It is not a storage platform.
 
 It is not a traditional cybersecurity dashboard.
 
 XPADI-SGDS explores survivability after infrastructure damage.
 
-The direction focuses on:
+The ecosystem direction focuses on:
 
 - deterministic reconstruction
-- survivability intelligence
 - continuity-aware recovery
-- fragment-aware infrastructure
+- survivability posture
+- recovery readiness
+- fragment-aware continuity
 - operational resilience after failure
-- post-damage continuity systems
-- recovery readiness visibility
-- infrastructure survivability posture
+- infrastructure continuity intelligence
+- post-damage reconstruction systems
 
 ---
 
@@ -56,7 +56,7 @@ XPADI-SGDS explores what happens after:
 - continuity failure
 - infrastructure damage
 
-Core Direction:
+CORE SIGNAL:
 
 ATTACK SUCCESS ≠ DATA LOSS
 ```
@@ -67,9 +67,9 @@ ATTACK SUCCESS ≠ DATA LOSS
 
 <div align="center">
 
-### ⚡ Cinematic Operational Surface
+## ⚡ Cinematic Operational Surface
 
-[OPEN DEMO](./demo/index.html)
+### [OPEN DEMO REACTOR](./demo/index.html)
 
 </div>
 
@@ -79,27 +79,23 @@ The XPADI-SGDS reactor surface simulates:
 - deterministic reconstruction atmosphere
 - survivability flow
 - infrastructure signal intelligence
-- recovery pulse states
-- continuity graph visibility
 - ecosystem continuity mapping
-- post-damage operational readiness
+- recovery pulse states
+- fragment graph visibility
+- operational continuity atmosphere
 
 ---
 
-# 🧬 REACTOR PHILOSOPHY
+# 🧬 VISUAL REACTOR DNA
 
-XPADI-SGDS visual identity is designed as:
+XPADI-SGDS visual identity is built as:
 
 - living survivability infrastructure
 - cinematic continuity reactor
-- cyber operational intelligence system
+- cyber operational intelligence surface
 - deterministic recovery atmosphere
 - AI-era continuity infrastructure
-- alive reconstruction surface
-
----
-
-## Visual DNA
+- alive reconstruction system
 
 Inspired by:
 
@@ -107,9 +103,9 @@ Inspired by:
 - XPADI 2040 Command UI
 - Mandale-OS Execution Reactor
 - cinematic deeptech systems
-- futuristic cyber infrastructure
 - NVIDIA-style operational surfaces
-- glass-edition infrastructure UI
+- ultra-glass infrastructure UI
+- futuristic cyber infrastructure
 
 ---
 
@@ -117,7 +113,7 @@ Inspired by:
 
 <div align="center">
 
-<img src="./assets/svg/process-flow.svg" width="100%"/>
+<img src="./assets/svg/process-flow.svg" width="100%" alt="XPADI Continuity Flow"/>
 
 </div>
 
@@ -132,29 +128,29 @@ Inspired by:
 
 ---
 
-# 🌐 ECOSYSTEM ARCHITECTURE
+# 🌐 XPADI ECOSYSTEM GRAPH
 
 <div align="center">
 
-<img src="./assets/svg/architecture.svg" width="100%"/>
+<img src="./assets/svg/architecture.svg" width="100%" alt="XPADI Ecosystem Graph"/>
 
 </div>
 
 ---
 
-# 🧠 ECOSYSTEM GRAPH
+# ⚡ XPADI RESEARCH ECOSYSTEM
 
 | Surface | Role |
 |---|---|
-| XPADI-ProofCheck™ | Recovery Intelligence Surface |
-| XPADI_Proof_Engine_V1 | Survivability Proof Engine |
-| digital-lifeline | Origin continuity architecture |
-| XLifelineAI | Runtime continuity intelligence |
+| XPADI-ProofCheck™ | Recovery Intelligence & Survivability Proof surface |
+| XPADI_Proof_Engine_V1 | Deterministic survivability proof engine |
+| digital-lifeline | Origin continuity architecture seed |
+| XLifelineAI | Runtime continuity & survivability intelligence |
 | dfg-demo-lab | Deterministic Fragment Graph research layer |
 
 ---
 
-# ⚠️ INFRASTRUCTURE REALITY
+# 🧠 INFRASTRUCTURE REALITY
 
 Modern infrastructure still contains hidden continuity assumptions.
 
@@ -185,9 +181,9 @@ XPADI-SGDS explores continuity after infrastructure failure.
 | Document | Purpose |
 |---|---|
 | [ecosystem-map.md](./docs/ecosystem-map.md) | Ecosystem continuity structure |
-| [GLASS_EDITION_2050_NOTES.md](./docs/GLASS_EDITION_2050_NOTES.md) | Visual philosophy |
+| [GLASS_EDITION_2050_NOTES.md](./docs/GLASS_EDITION_2050_NOTES.md) | Visual reactor philosophy |
 | [PH1_SURFACE_PACK.md](./docs/PH1_SURFACE_PACK.md) | Reactor surface architecture |
-| [PH1_SURFACE_PACK_ULTRA.md](./docs/PH1_SURFACE_PACK_ULTRA.md) | Ultra atmospheric infrastructure layer |
+| [PH1_SURFACE_PACK_ULTRA.md](./docs/PH1_SURFACE_PACK_ULTRA.md) | Ultra atmospheric layer |
 
 ---
 
@@ -211,9 +207,9 @@ NODE STRESS: ELEVATED
 XPADI-SGDS is designed to feel like:
 
 - a living survivability reactor
-- a continuity infrastructure intelligence system
+- a continuity intelligence system
 - a cinematic operational environment
-- a deterministic reconstruction atmosphere
+- a deterministic recovery atmosphere
 - a public research artifact
 - an alive cyber infrastructure layer
 
@@ -230,9 +226,9 @@ XPADI-SGDS connects into a broader public continuity ecosystem through:
 - SSRN
 - ORCID
 - Wikidata
-- founder infrastructure surfaces
 - survivability research artifacts
-- continuity-oriented public systems
+- continuity infrastructure surfaces
+- deterministic reconstruction research
 
 ---
 
@@ -273,6 +269,6 @@ AI Infrastructure • Survivability Systems • Runtime Intelligence
 
 ---
 
-### ⚡ CONTINUITY SIGNAL ACTIVE
+## ⚡ CONTINUITY SIGNAL ACTIVE
 
 </div>
