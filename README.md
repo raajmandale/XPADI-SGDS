@@ -161,6 +161,7 @@ XPADI-SGDS includes public-safe survivability benchmark demonstrations covering:
 - proof-oriented infrastructure interpretation
 
 ---
+
 ## 🧪 Recovery Benchmark Snapshot
 
 | Signal | State |
@@ -183,7 +184,7 @@ XPADI-SGDS includes public-safe survivability benchmark demonstrations covering:
 - Operational continuity posture is fragile
 
 ---
-### 🛰 Benchmark Interpretation
+## 🛰 Benchmark Interpretation
 
 The benchmark surface demonstrates how survivability posture may degrade when:
 
@@ -193,54 +194,38 @@ The benchmark surface demonstrates how survivability posture may degrade when:
 - fragment survivability visibility is insufficient
 
 XPADI-SGDS explores infrastructure survivability after failure rather than assuming recovery success by default.
----
-### 📊 XPADI-SGDS Benchmark & Recovery Signals
-## Recovery Benchmark Snapshot
-
-| Signal | State |
-|---|---|
-| Recovery Readiness | 19% |
-| Continuity Confidence | 25% |
-| Failure Exposure | HIGH |
-| Recovery Friction | HIGH |
-| Fragment Survivability Spread | LIMITED |
-| Integrity Verification | BLAKE3 VERIFIED |
 
 ---
-## ⚠ Recovery Intelligence
+## 🔗 Full Benchmark Documentation
 
-- Single-point dependency detected
-- Recovery pathway confidence reduced
-- Structural survivability concentration observed
-- Fragment survivability spread is limited
-- Operational continuity posture is fragile
+👉 [OPEN BENCHMARK DOCUMENTATION](https://github.com/raajmandale/XPADI-SGDS/blob/main/docs/BENCHMARK.md)
+---
+### 🧬 Ecosystem Architecture
+
+<div align="center">
+
+<img src="./assets/svg/architecture.svg" width="100%" alt="XPADI Ecosystem Architecture"/>
+
+</div>
+
+XPADI-SGDS acts as the canonical public root layer connecting survivability research surfaces into one continuity ecosystem.
+
+The ecosystem separates:
+
+- proof surfaces
+- reconstruction engines
+- continuity research
+- runtime survivability intelligence
+- fragment graph experimentation
+- public infrastructure visualization
+
+without exposing:
+
+- protected recovery internals
+- authority logic
+- proprietary survivability mechanisms
 
 ---
-## 🛰 Benchmark Interpretation
-
-XPADI-SGDS explores survivability posture under operational pressure.
-
-The benchmark surface demonstrates how recovery confidence may degrade when:
-
-- reconstruction pathways become fragile
-- survivability distribution remains limited
-- operational continuity depends on single infrastructure chains
-- fragment visibility becomes structurally weak
-
----
-
-## 🌌 Core Thesis
-
-Modern systems often verify integrity.
-
-XPADI-SGDS explores whether systems are structurally capable of surviving infrastructure failure itself.
-
----
-# ATTACK SUCCESS ≠ DATA LOSS
-
-Continuity is the Future. Survivability is the Foundation.
----
-
 ### ⚙ Living Reconstruction Flow
 
 <div align="center">
