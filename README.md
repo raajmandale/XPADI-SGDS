@@ -34,8 +34,7 @@ A cinematic survivability infrastructure ecosystem exploring deterministic recon
 </div>
 
 ---
-
-# 🧠 What is XPADI-SGDS?
+### 🧠 What is XPADI-SGDS?
 
 XPADI-SGDS™ is a public survivability infrastructure surface.
 
@@ -57,12 +56,10 @@ The ecosystem direction focuses on:
 - recovery-readiness visibility
 - infrastructure continuity under pressure
 - proof-oriented survivability systems
-
 ---
 
-# ⚡ Core Thesis
+### ⚡ Core Thesis
 
-```text
 Modern infrastructure still assumes recovery
 will work when pressure arrives.
 
@@ -75,15 +72,18 @@ XPADI-SGDS explores what happens after:
 - continuity failure
 - infrastructure damage
 
+---
 CORE SIGNAL:
 
 ATTACK SUCCESS ≠ DATA LOSS
-🛰️ Live Reactor Surface
+### 🛰️ Live Reactor Surface
 <div align="center">
-⚡ Cinematic Operational Surface
+
+### ⚡ Cinematic Operational Surface
 OPEN LIVE REACTOR
 </div>
 
+---
 The reactor surface simulates:
 
 continuity telemetry
@@ -95,7 +95,7 @@ recovery pulse states
 fragment graph visibility
 operational continuity atmosphere
 cinematic continuity infrastructure
-🌐 XPADI Master Ecosystem
+### 🌐 XPADI Master Ecosystem
 Surface	Role
 XPADI-SGDS™	Canonical survivability infrastructure root surface
 XPADI-ProofCheck™	Recovery Intelligence & Survivability Proof surface
@@ -103,7 +103,7 @@ XPADI_Proof_Engine_V1	Deterministic survivability proof engine
 digital-lifeline	Origin continuity architecture seed
 XLifelineAI	Runtime continuity & survivability intelligence
 dfg-demo-lab	Deterministic Fragment Graph research layer
-🧬 Ecosystem Architecture
+### 🧬 Ecosystem Architecture
 <div align="center"> <img src="./assets/svg/reactor-core.svg" width="100%" alt="XPADI Reactor Core"/>
 
 <br/><br/>
@@ -112,7 +112,7 @@ dfg-demo-lab	Deterministic Fragment Graph research layer
 
 XPADI-SGDS acts as the canonical public root layer connecting all survivability research surfaces into a unified continuity ecosystem.
 
-⚡ Continuity Flow
+### ⚡ Continuity Flow
 <div align="center"> <img src="./assets/svg/process-flow.svg" width="100%" alt="XPADI Continuity Flow"/> </div>
 Phase	Purpose
 DETECT	Identify continuity damage
@@ -121,7 +121,9 @@ DISTRIBUTE	Remove single-point exposure
 REBUILD	Deterministic reconstruction
 VERIFY	Generate survivability proof
 CONTINUE	Operational continuity recovery
-🧠 Infrastructure Reality
+
+---
+### 🧠 Infrastructure Reality
 
 Modern infrastructure still contains hidden continuity assumptions.
 
@@ -135,7 +137,7 @@ Backups can still collapse under operational pressure.
 
 XPADI-SGDS explores continuity after infrastructure failure.
 
-🌌 Atmospheric Identity
+### 🌌 Atmospheric Identity
 
 XPADI-SGDS is designed to feel like:
 
@@ -148,7 +150,7 @@ an alive cyber infrastructure layer
 
 —not a traditional landing page.
 
-🛰️ Research Identity Layer
+### 🛰️ Research Identity Layer
 
 XPADI-SGDS connects into a broader public continuity ecosystem through:
 
@@ -160,7 +162,7 @@ Wikidata
 survivability research artifacts
 continuity infrastructure surfaces
 deterministic reconstruction research
-⚡ Public Direction
+### ⚡ Public Direction
 
 XPADI-SGDS currently focuses on:
 
