@@ -22,21 +22,16 @@ A public survivability infrastructure and continuity research surface exploring 
 </div>
 
 ---
-
-# 🌐 XPADI Ecosystem Structure
-
-| Layer | System | Purpose |
-|---|---|---|
-| ROOT SURFACE | XPADI-SGDS™ | Canonical survivability infrastructure surface |
-| PROOF SURFACE | XPADI-ProofCheck™ | Recovery Intelligence & Survivability Proof |
-| ENGINE LAYER | XPADI_Proof_Engine_V1 | Deterministic reconstruction & proof engine |
-| ORIGIN LAYER | digital-lifeline | Origin survivability architecture seed |
-| AI CONTINUITY | XLifelineAI | Runtime continuity & survivability intelligence |
-| GRAPH RESEARCH | dfg-demo-lab | Deterministic Fragment Graph research layer |
-| IDENTITY SURFACE | raajmandale.in | Founder & ecosystem authority surface |
+### 🌐 SGDS Ecosystem Surfaces
+Surface	Purpose	Link
+XPADI-SGDS	Canonical survivability ecosystem root	https://github.com/raajmandale/XPADI-SGDS
+XPADI Proof Engine	Runtime continuity reactor	https://raajmandale.github.io/XPADI_Proof_Engine_V1/
+Digital Lifeline	Survivability architecture narrative	https://github.com/raajmandale/digital-lifeline
+XLifelineAI	AI-native continuity & self-healing runtime	https://github.com/raajmandale/XLifelineAI
+XPADI-ProofCheck	Recovery intelligence surface	https://xpadi.com/proofcheck/
+Research Paper	SGDS architecture & theory	https://zenodo.org/records/19500143
 
 ---
-
 # 🧠 What is XPADI-SGDS?
 
 XPADI-SGDS™ is a public survivability infrastructure surface.
