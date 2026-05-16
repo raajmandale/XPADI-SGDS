@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/svg/hero.svg" width="100%" alt="XPADI-SGDS Reactor Banner"/>
+<img src="./assets/svg/hero.svg" width="100%" alt="XPADI-SGDS Reactor"/>
 
 # XPADI-SGDS™
 
@@ -12,10 +12,21 @@ A cinematic survivability infrastructure ecosystem exploring deterministic recon
 
 <br/>
 
-[![LIVE](https://img.shields.io/badge/LIVE-DEMO-111827?style=for-the-badge)](./demo/index.html)
-[![XPADI](https://img.shields.io/badge/XPADI-SGDS-0B5FFF?style=for-the-badge)](#)
-[![PUBLIC RESEARCH](https://img.shields.io/badge/PUBLIC-RESEARCH-FF8A24?style=for-the-badge)](#)
+[![LIVE REACTOR](https://img.shields.io/badge/LIVE-REACTOR-0B1220?style=for-the-badge&logo=github)](https://raajmandale.github.io/XPADI-SGDS/demo/)
+[![XPADI](https://img.shields.io/badge/XPADI-SGDS-28A7FF?style=for-the-badge)](#)
+[![SURVIVABILITY](https://img.shields.io/badge/SURVIVABILITY-INFRASTRUCTURE-FF8A24?style=for-the-badge)](#)
 [![FOUNDER](https://img.shields.io/badge/FOUNDER-RAAJ%20MANDALE-111827?style=for-the-badge)](https://github.com/raajmandale)
+
+<br/>
+
+| Research Surface | Link |
+|---|---|
+| ⚡ Live Reactor Surface | https://raajmandale.github.io/XPADI-SGDS/demo/ |
+| 🧠 XPADI-ProofCheck™ | https://github.com/raajmandale/XPADI-ProofCheck |
+| 🛰️ XPADI_Proof_Engine_V1 | https://github.com/raajmandale/XPADI_Proof_Engine_V1 |
+| 🌌 digital-lifeline | https://github.com/raajmandale/digital-lifeline |
+| 🤖 XLifelineAI | https://github.com/raajmandale/XLifelineAI |
+| 🧬 dfg-demo-lab | https://github.com/raajmandale/dfg-demo-lab |
 
 </div>
 
@@ -23,7 +34,7 @@ A cinematic survivability infrastructure ecosystem exploring deterministic recon
 
 # 🧠 What is XPADI-SGDS?
 
-**XPADI-SGDS™** is a public survivability infrastructure surface.
+XPADI-SGDS™ is a public survivability infrastructure surface.
 
 It is not a backup tool.  
 It is not a storage platform.  
@@ -33,7 +44,7 @@ XPADI-SGDS explores a deeper infrastructure question:
 
 > What survives after damage?
 
-The core direction focuses on:
+The ecosystem direction focuses on:
 
 - deterministic reconstruction
 - survivability intelligence
@@ -42,14 +53,15 @@ The core direction focuses on:
 - post-damage operational resilience
 - recovery-readiness visibility
 - infrastructure continuity under pressure
+- proof-oriented survivability systems
 
 ---
 
 # ⚡ Core Thesis
 
 ```text
-Modern infrastructure still assumes recovery will work
-when pressure arrives.
+Modern infrastructure still assumes recovery
+will work when pressure arrives.
 
 XPADI-SGDS explores what happens after:
 
@@ -67,18 +79,15 @@ ATTACK SUCCESS ≠ DATA LOSS
 
 ---
 
-# 🛰️ Reactor Surface
+# 🛰️ Live Reactor Surface
 
 <div align="center">
 
 ## ⚡ Cinematic Operational Surface
 
-### [OPEN DEMO REACTOR](./demo/index.html)
+### [OPEN LIVE REACTOR](https://raajmandale.github.io/XPADI-SGDS/demo/)
 
 </div>
-
-> Note: GitHub may open `demo/index.html` as source code inside the repository.  
-> For a true browser demo, open the file locally or enable GitHub Pages for this repository.
 
 The reactor surface simulates:
 
@@ -90,18 +99,20 @@ The reactor surface simulates:
 - recovery pulse states
 - fragment graph visibility
 - operational continuity atmosphere
+- cinematic continuity infrastructure
 
 ---
 
-# 🌐 XPADI Research Ecosystem
+# 🌐 XPADI Master Ecosystem
 
-| Surface | Role | Link |
-|---|---|---|
-| **XPADI-ProofCheck™** | Recovery Intelligence & Survivability Proof surface | [Open Repo](https://github.com/raajmandale/XPADI-ProofCheck) |
-| **XPADI_Proof_Engine_V1** | Deterministic survivability proof engine | [Open Repo](https://github.com/raajmandale/XPADI_Proof_Engine_V1) |
-| **digital-lifeline** | Origin continuity architecture seed | [Open Repo](https://github.com/raajmandale/digital-lifeline) |
-| **XLifelineAI** | Runtime continuity & survivability intelligence | [Open Repo](https://github.com/raajmandale/XLifelineAI) |
-| **dfg-demo-lab** | Deterministic Fragment Graph research layer | [Open Repo](https://github.com/raajmandale/dfg-demo-lab) |
+| Surface | Role |
+|---|---|
+| **XPADI-SGDS™** | Canonical survivability infrastructure root surface |
+| **XPADI-ProofCheck™** | Recovery Intelligence & Survivability Proof surface |
+| **XPADI_Proof_Engine_V1** | Deterministic survivability proof engine |
+| **digital-lifeline** | Origin continuity architecture seed |
+| **XLifelineAI** | Runtime continuity & survivability intelligence |
+| **dfg-demo-lab** | Deterministic Fragment Graph research layer |
 
 ---
 
@@ -112,6 +123,8 @@ The reactor surface simulates:
 <img src="./assets/svg/architecture.svg" width="100%" alt="XPADI Ecosystem Architecture"/>
 
 </div>
+
+XPADI-SGDS acts as the canonical public root layer connecting all survivability research surfaces into a unified continuity ecosystem.
 
 ---
 
@@ -150,32 +163,6 @@ XPADI-SGDS explores continuity after infrastructure failure.
 
 ---
 
-# 📚 Documentation Layer
-
-| Document | Purpose |
-|---|---|
-| [ecosystem-map.md](./docs/ecosystem-map.md) | Ecosystem continuity structure |
-| [GLASS_EDITION_2050_NOTES.md](./docs/GLASS_EDITION_2050_NOTES.md) | Visual reactor philosophy |
-| [PH1_SURFACE_PACK.md](./docs/PH1_SURFACE_PACK.md) | Reactor surface architecture |
-| [PH1_SURFACE_PACK_ULTRA.md](./docs/PH1_SURFACE_PACK_ULTRA.md) | Ultra atmospheric layer |
-
----
-
-# ⚡ Infrastructure Signal
-
-```text
-SIGNAL: ACTIVE
-THREAT: DETECTED
-RECOVERY: READY
-GRAPH: STABLE
-REBUILD: IN PROGRESS
-CONTINUITY: MAINTAINED
-OWNER STATE: VERIFIED
-NODE STRESS: ELEVATED
-```
-
----
-
 # 🌌 Atmospheric Identity
 
 XPADI-SGDS is designed to feel like:
@@ -187,7 +174,7 @@ XPADI-SGDS is designed to feel like:
 - a public research artifact
 - an alive cyber infrastructure layer
 
-Not a traditional landing page.
+—not a traditional landing page.
 
 ---
 
@@ -228,6 +215,8 @@ XPADI-SGDS currently focuses on:
 Systems Architect  
 AI Infrastructure • Survivability Systems • Runtime Intelligence
 
+GitHub: https://github.com/raajmandale
+
 ---
 
 <div align="center">
@@ -242,6 +231,9 @@ AI Infrastructure • Survivability Systems • Runtime Intelligence
 <br/>
 
 [![XPADI-ProofCheck](https://img.shields.io/badge/XPADI--ProofCheck-Recovery%20Intelligence-28A7FF?style=for-the-badge)](https://github.com/raajmandale/XPADI-ProofCheck)
+
 [![DFG](https://img.shields.io/badge/DFG-Fragment%20Graph-FF8A24?style=for-the-badge)](https://github.com/raajmandale/dfg-demo-lab)
+
+[![LIVE REACTOR](https://img.shields.io/badge/LIVE-REACTOR%20SURFACE-0B1220?style=for-the-badge)](https://raajmandale.github.io/XPADI-SGDS/demo/)
 
 </div>
