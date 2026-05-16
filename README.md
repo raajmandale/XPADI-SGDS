@@ -23,7 +23,7 @@ A public survivability infrastructure and continuity research surface exploring 
 
 ---
 
-## 🌐 XPADI Ecosystem Structure
+# 🌐 XPADI Ecosystem Structure
 
 | Layer | System | Purpose |
 |---|---|---|
@@ -37,17 +37,17 @@ A public survivability infrastructure and continuity research surface exploring 
 
 ---
 
-## 🧠 What is XPADI-SGDS?
+# 🧠 What is XPADI-SGDS?
 
 XPADI-SGDS™ is a public survivability infrastructure surface.
 
-It is not:
+It is NOT:
 
 - a backup tool
 - a storage platform
 - a ransomware remover
 - a traditional cybersecurity dashboard
-- a cloud sync product
+- a cloud sync platform
 
 XPADI-SGDS explores a deeper infrastructure problem:
 
@@ -66,7 +66,7 @@ The project investigates continuity systems designed around:
 
 ---
 
-## 🏗 Infrastructure Model
+# 🏗 Infrastructure Model
 
 XPADI-SGDS explores survivability-oriented infrastructure through five operational layers:
 
@@ -89,28 +89,28 @@ The system direction investigates how continuity infrastructure may behave when:
 XPADI-SGDS focuses on continuity after failure — not only prevention before failure.
 
 ---
-### 📸 Proof Surface Screenshots
 
-<div align="center">
+# 📸 Proof Surface Screenshots
 
-### 01 ▸ CLI Engine Execution
+## 01 ▸ CLI Engine Execution
 
 <img src="./assets/screenshots/02_CLI_Engine_Execution.png" width="100%" alt="XPADI CLI Engine Execution"/>
 
 ---
-### 02 ▸ Recovery Intelligence & Public-Safe Proof Layer
+
+## 02 ▸ Recovery Intelligence & Public-Safe Proof Layer
 
 <img src="./assets/screenshots/04_Proof_Layer_and_PublicSafe.png" width="100%" alt="XPADI Recovery Intelligence"/>
 
 ---
-### 03 ▸ Cyber Proof Report Surface
+
+## 03 ▸ Cyber Proof Report Surface
 
 <img src="./assets/screenshots/05_Cyber_Report_Surface.png" width="100%" alt="XPADI Cyber Proof Surface"/>
 
-</div>
-
 ---
-## ⚡ Core Thesis
+
+# ⚡ Core Thesis
 
 Modern infrastructure still assumes recovery will work when pressure arrives.
 
@@ -132,17 +132,9 @@ XPADI-SGDS explores survivability after:
 
 ---
 
-## ⚡ Live Reactor Surface
-
-<div align="center">
-
-### 🌌 Cinematic Continuity Reactor
-
-<div align="center">
+# ⚡ Live Reactor Surface
 
 [![OPEN LIVE REACTOR](https://img.shields.io/badge/OPEN-LIVE%20REACTOR-0B1220?style=for-the-badge&logo=github)](https://raajmandale.github.io/XPADI-SGDS/demo/)
-
-</div>
 
 The XPADI-SGDS reactor surface simulates:
 
@@ -155,8 +147,10 @@ The XPADI-SGDS reactor surface simulates:
 - fragment graph visibility
 - operational resilience posture
 - cinematic continuity infrastructure
+
 ---
-### 📊 Benchmark & Recovery Signals
+
+# 📊 Benchmark & Recovery Signals
 
 XPADI-SGDS includes public-safe survivability benchmark demonstrations covering:
 
@@ -169,15 +163,15 @@ XPADI-SGDS includes public-safe survivability benchmark demonstrations covering:
 
 See:
 
+```text
 docs/BENCHMARK.md
+```
+
 ---
-## 🧬 Ecosystem Architecture
+
+# 🧬 Ecosystem Architecture
 
 <div align="center">
-
-<img src="./assets/svg/reactor-core.svg" width="100%" alt="XPADI Reactor Core"/>
-
-<br/><br/>
 
 <img src="./assets/svg/architecture.svg" width="100%" alt="XPADI Ecosystem Architecture"/>
 
@@ -194,11 +188,15 @@ The ecosystem separates:
 - fragment graph experimentation
 - public infrastructure visualization
 
-without exposing protected recovery internals or proprietary survivability mechanisms.
+without exposing:
+
+- protected recovery internals
+- authority logic
+- proprietary survivability mechanisms
 
 ---
 
-## ⚙ Living Reconstruction Flow
+# ⚙ Living Reconstruction Flow
 
 <div align="center">
 
@@ -217,7 +215,7 @@ without exposing protected recovery internals or proprietary survivability mecha
 
 ---
 
-## 🛰 Research & Infrastructure Direction
+# 🛰 Research & Infrastructure Direction
 
 XPADI-SGDS currently explores:
 
@@ -233,7 +231,7 @@ XPADI-SGDS currently explores:
 
 ---
 
-## 🌌 Infrastructure Reality
+# 🌌 Infrastructure Reality
 
 Modern infrastructure still contains hidden continuity assumptions.
 
@@ -249,7 +247,7 @@ XPADI-SGDS explores continuity after infrastructure failure rather than preventi
 
 ---
 
-## 🌐 Public Research Identity
+# 🌐 Public Research Identity
 
 | Identity Surface | Purpose | Link |
 |---|---|---|
@@ -262,7 +260,7 @@ XPADI-SGDS explores continuity after infrastructure failure rather than preventi
 
 ---
 
-## 🧠 Design Philosophy
+# 🧠 Design Philosophy
 
 XPADI-SGDS is intentionally designed to feel like:
 
@@ -277,7 +275,7 @@ XPADI-SGDS is intentionally designed to feel like:
 
 ---
 
-## ⚖ Repository Purpose
+# ⚖ Repository Purpose
 
 This repository exists as:
 
@@ -298,20 +296,23 @@ It does NOT expose:
 
 ---
 
-## 📁 Repository Structure
+# 📁 Repository Structure
 
 ```text
 XPADI-SGDS/
 │
 ├── assets/
+│   ├── screenshots/
 │   └── svg/
 │       ├── hero.svg
 │       ├── architecture.svg
-│       ├── process-flow.svg
-│       └── reactor-core.svg
+│       └── process-flow.svg
 │
 ├── demo/
 │   └── index.html
+│
+├── docs/
+│   └── BENCHMARK.md
 │
 ├── LICENSE
 └── README.md
@@ -319,17 +320,17 @@ XPADI-SGDS/
 
 ---
 
-## 📜 License
+# 📜 License
 
 MIT License
 
-This repository is released under the MIT License for public research visibility, educational exploration, continuity visualization, and infrastructure demonstration purposes.
+This repository is released under the MIT License for:
 
-See:
-
-```text
-LICENSE
-```
+- public research visibility
+- educational exploration
+- continuity visualization
+- survivability demonstrations
+- infrastructure research presentation
 
 ---
 
@@ -345,9 +346,11 @@ AI Infrastructure • Survivability Systems • Runtime Intelligence
 - 🧾 https://orcid.org/0009-0005-9810-1655
 
 ---
+
 <div align="center">
 
-### ATTACK SUCCESS ≠ DATA LOSS
+# ATTACK SUCCESS ≠ DATA LOSS
+
 ## Continuity is the Future. Survivability is the Foundation.
 
 </div>
