@@ -184,15 +184,14 @@ XPADI-SGDS explores continuity after infrastructure failure rather than preventi
 ### 🌐 Public Research Identity
 
 XPADI-SGDS connects into a broader public research and infrastructure identity ecosystem through:
-- GitHub
-- Zenodo
-- ORCID
-- SSRN
-- Wikidata
-- public research artifacts
-- continuity infrastructure surfaces
-- survivability demonstrations
-- deterministic reconstruction research
+| Identity Surface | Purpose | Link |
+|---|---|---|
+| GitHub | Open infrastructure & code surfaces | https://github.com/raajmandale |
+| Zenodo | DOI-backed research records | https://zenodo.org |
+| ORCID | Research identity layer | https://orcid.org/0009-0005-9810-1655 |
+| SSRN | Public paper distribution | https://papers.ssrn.com |
+| Wikidata | Public knowledge graph identity | https://www.wikidata.org |
+| Founder Website | Ecosystem & research hub | https://raajmandale.in |
 
 ---
 
