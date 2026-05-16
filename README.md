@@ -89,7 +89,28 @@ The system direction investigates how continuity infrastructure may behave when:
 XPADI-SGDS focuses on continuity after failure — not only prevention before failure.
 
 ---
+## 📸 Proof Surface Screenshots
 
+<div align="center">
+
+### 01 — Hero Recovery Surface
+<img src="./assets/screenshots/01_Hero_Recovery_Surface.png" width="100%" alt="XPADI Hero Recovery Surface"/>
+
+### 02 — CLI Engine Execution
+<img src="./assets/screenshots/02_CLI_Engine_Execution.png" width="100%" alt="XPADI CLI Engine Execution"/>
+
+### 03 — Recovery Intelligence
+<img src="./assets/screenshots/03_Recovery_Intelligence.png" width="100%" alt="XPADI Recovery Intelligence"/>
+
+### 04 — Proof Layer & Public-Safe Notes
+<img src="./assets/screenshots/04_Proof_Layer_and_PublicSafe.png" width="100%" alt="XPADI Proof Layer and Public Safe Notes"/>
+
+### 05 — Cyber Report Surface
+<img src="./assets/screenshots/05_Cyber_Report_Surface.png" width="100%" alt="XPADI Cyber Report Surface"/>
+
+</div>
+
+---
 ## ⚡ Core Thesis
 
 Modern infrastructure still assumes recovery will work when pressure arrives.
