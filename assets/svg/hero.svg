@@ -1,117 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-<title id="title">XPADI-SGDS Glass Edition 2050 Hero</title>
-<desc id="desc">Animated future glass infrastructure hero for XPADI-SGDS with owner recovery core, fragment streams, and continuity rings.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="900" viewBox="0 0 1800 900">
 <defs>
-  <radialGradient id="bgA" cx="50%" cy="20%" r="80%">
-    <stop offset="0%" stop-color="#173a61"/>
-    <stop offset="48%" stop-color="#07172f"/>
-    <stop offset="100%" stop-color="#030613"/>
+  <radialGradient id="bg" cx="58%" cy="46%" r="82%">
+    <stop offset="0%" stop-color="#0b2c4d"/>
+    <stop offset="45%" stop-color="#061426"/>
+    <stop offset="100%" stop-color="#020611"/>
   </radialGradient>
-  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#9ef7ff"/>
-    <stop offset="44%" stop-color="#58ffb1"/>
-    <stop offset="74%" stop-color="#ff9f43"/>
-    <stop offset="100%" stop-color="#f472b6"/>
+  <linearGradient id="brandGrad" x1="0%" x2="100%">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="42%" stop-color="#78ddff"/>
+    <stop offset="100%" stop-color="#ff8a24"/>
   </linearGradient>
-  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#123b65" stop-opacity="0.58"/>
-    <stop offset="48%" stop-color="#08172e" stop-opacity="0.72"/>
-    <stop offset="100%" stop-color="#190d25" stop-opacity="0.62"/>
+  <linearGradient id="energy" x1="0%" x2="100%">
+    <stop offset="0%" stop-color="#28a7ff"/>
+    <stop offset="55%" stop-color="#78ddff"/>
+    <stop offset="100%" stop-color="#ff8a24"/>
   </linearGradient>
   <filter id="glow">
-    <feGaussianBlur stdDeviation="8" result="blur"/>
-    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <feGaussianBlur stdDeviation="7" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <filter id="bigGlow">
-    <feGaussianBlur stdDeviation="28" result="blur"/>
-    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  <filter id="deepGlow">
+    <feGaussianBlur stdDeviation="18" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
-    <path d="M54 0H0V54" fill="none" stroke="#9ef7ff" stroke-opacity="0.055" stroke-width="1"/>
+  <filter id="softBlur"><feGaussianBlur stdDeviation="24"/></filter>
+  <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+    <path d="M56 0H0V56" fill="none" stroke="#78ddff" stroke-opacity=".07"/>
   </pattern>
   <style>
-    .kicker{font:800 20px Arial,Helvetica,sans-serif;letter-spacing:5px;fill:#9ef7ff}
-    .title{font:900 116px Arial,Helvetica,sans-serif;fill:#f8fbff}
-    .sub{font:700 34px Arial,Helvetica,sans-serif;fill:#dbeafe}
-    .body{font:500 25px Arial,Helvetica,sans-serif;fill:#bdd7ee}
-    .micro{font:800 14px Arial,Helvetica,sans-serif;letter-spacing:2px;fill:#9ef7ff}
-    .ring{transform-origin:1380px 540px;animation:spin 22s linear infinite}
-    .ring2{transform-origin:1380px 540px;animation:spinR 26s linear infinite}
-    .ring3{transform-origin:1380px 540px;animation:spin 34s linear infinite}
-    .flow{animation:dash 9s linear infinite}
-    .pulse{animation:pulse 3.8s ease-in-out infinite}
-    .float{animation:float 7s ease-in-out infinite}
-    .scan{animation:scan 5.8s ease-in-out infinite}
-    .frag1{animation:frag 6s ease-in-out infinite}
-    .frag2{animation:frag 7.5s ease-in-out infinite}
-    .frag3{animation:frag 9s ease-in-out infinite}
+    .ringA{animation:spin 38s linear infinite;transform-origin:1040px 455px}
+    .ringB{animation:spinR 54s linear infinite;transform-origin:1040px 455px}
+    .ringC{animation:spin 24s linear infinite;transform-origin:1040px 455px}
+    .pulse{animation:pulse 2.8s ease-in-out infinite;transform-origin:center}
+    .float{animation:float 5s ease-in-out infinite}
+    .dash{stroke-dasharray:18 18;animation:dash 3.4s linear infinite}
+    .shine{animation:shine 6s ease-in-out infinite}
     @keyframes spin{to{transform:rotate(360deg)}}
     @keyframes spinR{to{transform:rotate(-360deg)}}
-    @keyframes dash{to{stroke-dashoffset:-240}}
-    @keyframes pulse{0%,100%{opacity:.34}50%{opacity:1}}
+    @keyframes dash{to{stroke-dashoffset:-180}}
+    @keyframes pulse{0%,100%{opacity:.65;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-    @keyframes scan{0%,100%{opacity:.08;transform:translateX(-90px)}50%{opacity:.32;transform:translateX(130px)}}
-    @keyframes frag{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(-18px);opacity:1}}
+    @keyframes shine{0%,100%{opacity:.18}50%{opacity:.75}}
   </style>
 </defs>
 
-<rect width="1920" height="1080" fill="url(#bgA)"/>
-<rect width="1920" height="1080" fill="url(#grid)"/>
+<rect width="1800" height="900" fill="url(#bg)"/>
+<rect width="1800" height="900" fill="url(#grid)"/>
 
-<circle cx="1450" cy="210" r="330" fill="#54d6ff" opacity=".075" class="pulse"/>
-<circle cx="280" cy="840" r="280" fill="#58ffb1" opacity=".065" class="pulse"/>
-<circle cx="1110" cy="860" r="250" fill="#ff9f43" opacity=".045" class="pulse"/>
+<circle cx="1330" cy="440" r="460" fill="#ff8a24" opacity=".08" filter="url(#softBlur)"/>
+<circle cx="610" cy="390" r="560" fill="#28a7ff" opacity=".12" filter="url(#softBlur)"/>
 
-<g class="float">
-  <rect x="110" y="118" width="1080" height="780" rx="48" fill="url(#glass)" stroke="url(#edge)" stroke-width="2.3" filter="url(#glow)"/>
-  <rect x="150" y="160" width="1000" height="700" rx="38" fill="#020817" opacity=".28" stroke="#ffffff" stroke-opacity=".08"/>
+<g opacity=".28" filter="url(#glow)">
+  <path class="dash" d="M120 575 C410 345 620 330 900 455 S1320 645 1650 390" fill="none" stroke="#28a7ff" stroke-width="3"/>
+  <path class="dash" d="M130 655 C450 500 680 430 965 530 S1320 720 1665 515" fill="none" stroke="#ff8a24" stroke-width="3"/>
+  <path class="dash" d="M260 295 C620 135 1130 145 1530 300" fill="none" stroke="#78ddff" stroke-width="2"/>
 </g>
 
-<text x="190" y="230" class="kicker">SURVIVABILITY-GOVERNED DATA SYSTEMS</text>
-<text x="190" y="360" class="title">XPADI-SGDS</text>
-<text x="194" y="430" class="sub">Attack Success ≠ Data Loss</text>
-<text x="194" y="526" class="body">Glass Edition 2050 surface for XPADI-DISK style survivability:</text>
-<text x="194" y="570" class="body">fragment-aware continuity • deterministic rebuild • owner recovery</text>
-<text x="194" y="614" class="body">and proof-driven infrastructure for failure-first systems.</text>
-
-<g filter="url(#glow)">
-  <rect x="194" y="704" width="174" height="60" rx="30" fill="#54d6ff"/>
-  <text x="246" y="742" font-family="Arial" font-size="20" font-weight="900" fill="#03111f">PROOF</text>
-  <rect x="392" y="704" width="194" height="60" rx="30" fill="#58ffb1"/>
-  <text x="442" y="742" font-family="Arial" font-size="20" font-weight="900" fill="#03111f">REBUILD</text>
-  <rect x="610" y="704" width="194" height="60" rx="30" fill="#ff9f43"/>
-  <text x="666" y="742" font-family="Arial" font-size="20" font-weight="900" fill="#03111f">VERIFY</text>
-  <rect x="828" y="704" width="184" height="60" rx="30" fill="#f472b6"/>
-  <text x="880" y="742" font-family="Arial" font-size="20" font-weight="900" fill="#03111f">SURVIVE</text>
+<g transform="translate(1040 455)" filter="url(#deepGlow)">
+  <g class="ringA"><circle r="330" fill="none" stroke="#28a7ff" stroke-opacity=".22" stroke-width="2" stroke-dasharray="10 16"/></g>
+  <g class="ringB"><circle r="270" fill="none" stroke="#78ddff" stroke-opacity=".32" stroke-width="2" stroke-dasharray="4 12"/></g>
+  <g class="ringC"><circle r="205" fill="none" stroke="#ff8a24" stroke-opacity=".34" stroke-width="2" stroke-dasharray="18 12"/></g>
+  <circle r="150" fill="none" stroke="#28a7ff" stroke-opacity=".7" stroke-width="4"/>
+  <circle r="112" fill="#020611" stroke="#78ddff" stroke-opacity=".75" stroke-width="2"/>
+  <circle class="pulse" r="62" fill="#28a7ff" opacity=".18"/>
+  <path d="M0 -66 L50 -28 L50 42 L0 72 L-50 42 L-50 -28Z" fill="none" stroke="#78ddff" stroke-width="3"/>
+  <text y="-10" text-anchor="middle" font-family="Inter,Segoe UI,Arial" font-size="18" font-weight="900" fill="#78ddff" letter-spacing="6">OWNER</text>
+  <text y="34" text-anchor="middle" font-family="Inter,Segoe UI,Arial" font-size="44" font-weight="950" fill="#ffffff">RECOVERY</text>
+  <text y="67" text-anchor="middle" font-family="Inter,Segoe UI,Arial" font-size="15" font-weight="900" fill="#9db0c9" letter-spacing="5">CONTINUITY REACTOR</text>
 </g>
 
-<g filter="url(#bigGlow)">
-  <circle cx="1380" cy="540" r="255" fill="none" stroke="url(#edge)" stroke-width="2.6" stroke-dasharray="28 22" class="ring"/>
-  <circle cx="1380" cy="540" r="190" fill="none" stroke="#9ef7ff" stroke-opacity=".75" stroke-width="2.1" stroke-dasharray="16 18" class="ring2"/>
-  <circle cx="1380" cy="540" r="124" fill="none" stroke="#ff9f43" stroke-opacity=".82" stroke-width="2.1" stroke-dasharray="10 12" class="ring3"/>
+<g transform="translate(1040 455)" filter="url(#glow)" font-family="Inter,Segoe UI,Arial" font-weight="900">
+  <line class="dash" x1="-252" y1="-185" x2="-100" y2="-70" stroke="#78ddff" stroke-width="3"/>
+  <line class="dash" x1="252" y1="-185" x2="100" y2="-70" stroke="#78ddff" stroke-width="3"/>
+  <line class="dash" x1="-280" y1="145" x2="-115" y2="58" stroke="#ff8a24" stroke-width="3"/>
+  <line class="dash" x1="280" y1="145" x2="115" y2="58" stroke="#ff8a24" stroke-width="3"/>
+  <g class="float"><circle cx="-285" cy="-210" r="38" fill="#071426" stroke="#78ddff" stroke-width="3"/><text x="-285" y="-268" text-anchor="middle" font-size="20" fill="#fff">DETECT</text></g>
+  <g class="float" style="animation-delay:.6s"><circle cx="285" cy="-210" r="38" fill="#071426" stroke="#78ddff" stroke-width="3"/><text x="285" y="-268" text-anchor="middle" font-size="20" fill="#fff">DISTRIBUTE</text></g>
+  <g class="float" style="animation-delay:1.2s"><circle cx="-305" cy="165" r="38" fill="#071426" stroke="#ff8a24" stroke-width="3"/><text x="-305" y="226" text-anchor="middle" font-size="20" fill="#fff">PROOF</text></g>
+  <g class="float" style="animation-delay:1.8s"><circle cx="305" cy="165" r="38" fill="#071426" stroke="#ff8a24" stroke-width="3"/><text x="305" y="226" text-anchor="middle" font-size="20" fill="#fff">CONTINUE</text></g>
 </g>
 
-<g filter="url(#glow)">
-  <circle cx="1380" cy="540" r="82" fill="#061120" stroke="url(#edge)" stroke-width="3.2"/>
-  <text x="1325" y="530" class="micro">OWNER</text>
-  <text x="1302" y="568" font-family="Arial" font-size="28" font-weight="900" fill="#ffffff">RECOVERY</text>
+<g transform="translate(105 150)" font-family="Inter,Segoe UI,Arial">
+  <text font-size="116" font-weight="950" fill="#ffffff" letter-spacing="-6">XPADI</text>
+  <text y="124" font-size="128" font-weight="950" fill="url(#brandGrad)" letter-spacing="-7">SGDS</text>
+  <text y="178" font-size="22" font-weight="900" fill="#78ddff" letter-spacing="11">SURVIVABILITY-GOVERNED DATA SYSTEMS</text>
+  <text y="260" font-size="44" font-weight="950" fill="#ffffff">Attack Success <tspan fill="#ff8a24">≠ Data Loss</tspan></text>
+  <text y="320" font-size="26" fill="#b9c9dc">Deterministic reconstruction • fragment intelligence • owner recovery authority</text>
+  <rect y="370" width="520" height="66" rx="21" fill="#061426" stroke="#28a7ff" stroke-opacity=".62"/>
+  <text x="34" y="412" font-size="21" font-weight="950" fill="#78ddff">PUBLIC RESEARCH SURFACE</text>
 </g>
 
-<g stroke="url(#edge)" stroke-width="3.2" fill="none" filter="url(#glow)">
-  <path d="M1188 540 C1245 540 1285 540 1310 540" stroke-dasharray="15 12" class="flow"/>
-  <path d="M1015 734 C1140 765 1260 750 1340 638" stroke-dasharray="13 12" class="flow"/>
-  <path d="M1030 260 C1185 236 1312 316 1355 448" stroke-dasharray="13 12" class="flow"/>
-</g>
-
-<g filter="url(#glow)">
-  <rect x="1260" y="300" width="42" height="42" rx="10" fill="#9ef7ff" opacity=".8" class="frag1"/>
-  <rect x="1518" y="390" width="34" height="34" rx="8" fill="#58ffb1" opacity=".8" class="frag2"/>
-  <rect x="1510" y="660" width="46" height="46" rx="12" fill="#ff9f43" opacity=".82" class="frag3"/>
-  <rect x="1210" y="700" width="32" height="32" rx="8" fill="#f472b6" opacity=".75" class="frag2"/>
-</g>
-
-<g class="scan">
-  <rect x="0" y="0" width="140" height="1080" fill="#9ef7ff" opacity=".12"/>
+<g class="shine" transform="translate(110 720)" font-family="Inter,Segoe UI,Arial" font-weight="900">
+  <rect width="1580" height="96" rx="28" fill="#061426" opacity=".82" stroke="#78ddff" stroke-opacity=".25"/>
+  <text x="45" y="60" font-size="23" fill="#78ddff" letter-spacing="6">CORE SIGNAL</text>
+  <text x="355" y="62" font-size="34" fill="#ffffff">Continuity is the Future. <tspan fill="#28a7ff">Survivability is the Foundation.</tspan></text>
 </g>
 </svg>

@@ -1,180 +1,704 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="refresh" content="0; url=./demo/index.html">
-<title>XPADI-SGDS</title>
-</head>
-<body>
-Redirecting to XPADI-SGDS Reactor...
-</body>
-</html>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>XPADI-SGDS™ — Survivability-Governed Data Systems</title>
+<style>
 :root{
-  --bg:#020611;
-  --panel:#071426;
-  --panel2:#0b1d35;
-  --blue:#28a7ff;
-  --cyan:#78ddff;
-  --orange:#ff8a24;
-  --text:#f7fbff;
-  --muted:#9fb4ce;
-  --line:rgba(120,221,255,.18);
-  --orangeLine:rgba(255,138,36,.26);
+  --bg:#02060f;
+  --bg-2:#050b18;
+  --cyan:#00e5ff;
+  --cyan-2:#62f8ff;
+  --orange:#ff6a00;
+  --orange-2:#ff9a4d;
+  --white:#eaf6ff;
+  --muted:#8aa2b8;
+  --glass:rgba(255,255,255,.04);
+  --glass-border:rgba(255,255,255,.08);
+  --grid:rgba(255,255,255,.03);
+  --shadow:0 0 80px rgba(0,229,255,.08);
+  --radius:18px;
+  --ease:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html,body{height:100%}
 body{
   margin:0;
-  font-family:Inter,Segoe UI,Arial,sans-serif;
-  color:var(--text);
+  background:var(--bg);
+  color:var(--white);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
   overflow-x:hidden;
-  background:
-    radial-gradient(circle at 12% 0%,rgba(40,167,255,.22),transparent 28%),
-    radial-gradient(circle at 100% 14%,rgba(255,138,36,.14),transparent 26%),
-    radial-gradient(circle at 50% 85%,rgba(40,167,255,.10),transparent 35%),
-    linear-gradient(180deg,#020611 0%,#061426 48%,#020611 100%);
 }
-body:before{
+body::before{
   content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
+  position:fixed; inset:0;
+  background:
+    radial-gradient(1200px 800px at 80% -10%, rgba(0,229,255,.08), transparent 60%),
+    radial-gradient(900px 600px at -10% 20%, rgba(255,106,0,.06), transparent 60%),
+    radial-gradient(1400px 1000px at 50% 120%, rgba(0,229,255,.05), transparent 70%),
+    var(--bg);
+  z-index:-3;
+}
+body::after{
+  content:"";
+  position:fixed; inset:0;
   background-image:
-    linear-gradient(rgba(120,221,255,.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(120,221,255,.045) 1px,transparent 1px);
-  background-size:54px 54px;
-  animation:gridShift 26s linear infinite;
-  mask-image:linear-gradient(to bottom,black 0%,transparent 94%);
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse at center, black 40%, transparent 80%);
+  z-index:-2;
+  opacity:.6;
 }
-body:after{
-  content:"";
-  position:fixed;
-  inset:-20%;
-  pointer-events:none;
-  z-index:0;
-  background:
-    radial-gradient(circle at 24% 32%,rgba(40,167,255,.13),transparent 22%),
-    radial-gradient(circle at 76% 28%,rgba(255,138,36,.10),transparent 20%),
-    radial-gradient(circle at 50% 80%,rgba(120,221,255,.07),transparent 28%);
-  filter:blur(18px);
-  animation:atmo 18s ease-in-out infinite;
+#glowFollow{
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:radial-gradient(400px 400px at var(--mx,50%) var(--my,30%), rgba(0,229,255,.06), transparent 60%);
+  mix-blend-mode:screen;
+  transition:background .2s var(--ease);
 }
-@keyframes gridShift{to{transform:translateY(54px)}}
-@keyframes atmo{0%,100%{transform:scale(1)}50%{transform:translate(2%,-1%) scale(1.04)}}
-a{text-decoration:none;color:inherit}
-.wrap{position:relative;z-index:2;width:min(1360px,94vw);margin:auto}
+a{color:inherit;text-decoration:none}
+.container{max-width:1440px;margin:0 auto;padding:0 32px}
+@media(max-width:768px){.container{padding:0 20px}}
+
+/* TELEMETRY */
 .telemetry{
-  position:sticky;top:0;z-index:99;height:40px;display:flex;align-items:center;overflow:hidden;
-  background:rgba(2,8,18,.90);backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(120,221,255,.16);
+  position:sticky; top:0; z-index:100;
+  backdrop-filter:blur(12px) saturate(140%);
+  -webkit-backdrop-filter:blur(12px) saturate(140%);
+  background:linear-gradient(to bottom, rgba(2,6,15,.9), rgba(2,6,15,.6));
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
-.track{
-  display:flex;gap:44px;white-space:nowrap;padding-left:100%;
-  animation:ticker 36s linear infinite;
-  font-size:11px;font-weight:900;letter-spacing:.28em;text-transform:uppercase;
+.telemetry-inner{
+  display:flex; align-items:center; gap:32px;
+  height:44px; font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted);
+  overflow:hidden;
 }
-@keyframes ticker{to{transform:translateX(-50%)}}
-.blue{color:var(--cyan);text-shadow:0 0 12px rgba(120,221,255,.65)}
-.orange{color:var(--orange);text-shadow:0 0 12px rgba(255,138,36,.55)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0 20px}
-.brand{display:flex;gap:14px;align-items:center;font-size:24px;font-weight:950;letter-spacing:-.05em}
-.mark{width:44px;height:44px;border:1px solid rgba(120,221,255,.32);border-radius:15px;display:grid;place-items:center;color:var(--cyan);background:radial-gradient(circle,rgba(40,167,255,.22),rgba(7,20,38,.72));box-shadow:0 0 34px rgba(40,167,255,.16)}
-.brand small{display:block;margin-top:5px;font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:rgba(120,221,255,.78);font-weight:900}
-.links{display:flex;gap:24px}
-.links a{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#d6eeff;opacity:.82}
-.pill{border:1px solid rgba(40,167,255,.26);background:rgba(7,20,38,.62);border-radius:999px;padding:12px 18px;color:var(--cyan);font-weight:900;font-size:12px}
-.glass{
-  border:1px solid var(--line);
-  background:linear-gradient(135deg,rgba(11,29,53,.88),rgba(3,9,20,.76));
-  backdrop-filter:blur(26px);
-  border-radius:34px;
-  box-shadow:0 34px 120px rgba(0,0,0,.56),inset 0 1px 0 rgba(255,255,255,.055);
+.telemetry-track{
+  display:flex; gap:48px; animation:telemetryScroll 40s linear infinite;
 }
-.hero{min-height:calc(100vh - 90px);display:grid;grid-template-columns:1fr 1.15fr .82fr;gap:22px;align-items:stretch;padding:30px 0 60px}
-.copy{padding:56px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.copy:before{content:"";position:absolute;inset:-30%;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.065),transparent 58%);animation:shine 9s ease-in-out infinite}
-@keyframes shine{0%,65%,100%{transform:translateX(-72%)}78%{transform:translateX(72%)}}
-.kicker{display:inline-flex;gap:12px;align-items:center;width:max-content;border:1px solid rgba(120,221,255,.24);border-radius:999px;background:rgba(40,167,255,.06);padding:12px 16px;color:var(--cyan);font-size:11px;font-weight:950;letter-spacing:.34em;text-transform:uppercase}
-.kicker i{width:8px;height:8px;border-radius:99px;background:var(--orange);box-shadow:0 0 22px rgba(255,138,36,.8)}
-h1{font-size:clamp(70px,8vw,130px);line-height:.82;margin:34px 0 0;letter-spacing:-.09em;font-weight:950}
-h1 span{display:block;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
-.thesis{margin-top:28px;font-size:clamp(28px,3vw,44px);font-weight:950;letter-spacing:-.04em}
-.thesis strong{color:var(--orange)}
-.lead{margin-top:24px;color:#bdd0e6;font-size:18px;line-height:1.8}
-.actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
-.btn{border-radius:999px;padding:15px 21px;font-weight:950;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#02101e;box-shadow:0 0 42px rgba(40,167,255,.24)}
-.btn.alt{background:rgba(255,138,36,.07);border:1px solid rgba(255,138,36,.34);color:var(--orange);box-shadow:none}
-.reactor{position:relative;min-height:690px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at center,rgba(40,167,255,.15),transparent 44%),linear-gradient(135deg,rgba(10,22,40,.88),rgba(3,9,20,.78))}
-.orbit{position:absolute;border-radius:999px;border:1px dashed rgba(120,221,255,.28);animation:spin linear infinite}
-.o1{width:650px;height:650px;animation-duration:52s}.o2{width:510px;height:510px;animation-duration:34s;animation-direction:reverse}.o3{width:370px;height:370px;border-color:rgba(255,138,36,.26);animation-duration:22s}.o4{width:242px;height:242px;animation-duration:16s;animation-direction:reverse}
-@keyframes spin{to{transform:rotate(360deg)}}
-.beam{position:absolute;height:2px;width:580px;background:linear-gradient(90deg,transparent,rgba(120,221,255,.88),transparent);filter:drop-shadow(0 0 14px rgba(120,221,255,.8));animation:beam 4.6s ease-in-out infinite}
-.b1{transform:rotate(13deg)}.b2{transform:rotate(-19deg);background:linear-gradient(90deg,transparent,rgba(255,138,36,.72),transparent);filter:drop-shadow(0 0 14px rgba(255,138,36,.65));animation-delay:1.35s}
-@keyframes beam{0%,100%{opacity:.18;scale:.92}50%{opacity:.95;scale:1.08}}
-.core{width:282px;height:282px;border-radius:999px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(120,221,255,.22);background:radial-gradient(circle,rgba(40,167,255,.26),transparent 58%),rgba(3,9,20,.96);box-shadow:0 0 150px rgba(40,167,255,.30),0 0 66px rgba(255,138,36,.12),inset 0 0 74px rgba(40,167,255,.10);animation:core 5s ease-in-out infinite}
-@keyframes core{0%,100%{transform:translateY(0);box-shadow:0 0 115px rgba(40,167,255,.23),0 0 45px rgba(255,138,36,.08)}50%{transform:translateY(-9px);box-shadow:0 0 172px rgba(40,167,255,.38),0 0 86px rgba(255,138,36,.18)}}
-.core b{font-size:44px;line-height:.92}.core small{display:block;margin-bottom:10px;font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--cyan);font-weight:950}
-.node{position:absolute;width:58px;height:58px;border-radius:18px;background:rgba(11,29,53,.84);border:1px solid rgba(120,221,255,.27);box-shadow:0 0 42px rgba(40,167,255,.24);animation:float 5s ease-in-out infinite}
-.n1{top:92px;left:310px}.n2{top:230px;right:92px;background:rgba(255,138,36,.15);border-color:rgba(255,138,36,.30);animation-delay:1s}.n3{bottom:112px;left:135px;animation-delay:2s}.n4{bottom:170px;right:220px;background:rgba(255,138,36,.10);animation-delay:3s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
-.status{padding:30px;display:flex;flex-direction:column;justify-content:center;gap:18px}
-.status-title{color:var(--orange);font-size:12px;font-weight:950;letter-spacing:.34em;text-transform:uppercase}
-.status-item{display:grid;grid-template-columns:44px 1fr;gap:14px;border-bottom:1px solid rgba(120,221,255,.09);padding:8px 0}
-.icon{width:42px;height:42px;border:1px solid rgba(120,221,255,.26);border-radius:14px;display:grid;place-items:center;color:var(--cyan);background:rgba(40,167,255,.06)}
-.status-item b{display:block;font-size:15px;margin-bottom:4px}.status-item p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}.status-thesis{border:1px solid var(--orangeLine);border-radius:20px;padding:18px;background:rgba(255,138,36,.055);color:var(--orange);font-weight:950}
-.section{margin:84px 0}.eyebrow{color:var(--cyan);font-size:11px;font-weight:950;letter-spacing:.42em;text-transform:uppercase}.section h2{font-size:clamp(40px,5vw,78px);line-height:.92;letter-spacing:-.065em;margin:14px 0 30px}
-.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.card{min-height:220px;padding:24px;border-radius:26px;border:1px solid rgba(120,221,255,.14);background:linear-gradient(135deg,rgba(11,29,53,.86),rgba(3,9,20,.76));position:relative;overflow:hidden;transition:.3s}.card:hover{transform:translateY(-8px);border-color:rgba(255,138,36,.34);box-shadow:0 0 42px rgba(40,167,255,.13)}
-.card:after{content:"";position:absolute;left:-120%;top:0;width:70%;height:100%;background:linear-gradient(90deg,transparent,rgba(120,221,255,.08),transparent);transform:skewX(-18deg);animation:sig 6s linear infinite}
-@keyframes sig{to{left:180%}}
-.card .num{color:var(--cyan);font-size:12px;letter-spacing:.35em;font-weight:950}.card h3{margin:22px 0 14px;font-size:22px}.card p{color:var(--muted);font-size:14px;line-height:1.65}
-.state{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}.state-card,.identity-card,.repo{border:1px solid rgba(120,221,255,.15);background:linear-gradient(135deg,rgba(11,29,53,.88),rgba(3,9,20,.78));border-radius:24px;padding:22px;position:relative;overflow:hidden}.state-card h4{color:var(--cyan);font-size:10px;letter-spacing:.28em;text-transform:uppercase}.state-card h3{font-size:32px;margin:16px 0 10px}.state-card p,.identity-card p,.repo p{color:var(--muted);font-size:14px;line-height:1.6}
-.constellation{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.map{min-height:560px;position:relative;overflow:hidden}.map svg{position:absolute;inset:0;width:100%;height:100%}
-.repo-list{display:grid;gap:14px}.repo{transition:.3s}.repo:hover{transform:translateX(6px) translateY(-4px);border-color:rgba(255,138,36,.42);box-shadow:0 0 44px rgba(40,167,255,.18)}.repo small{display:block;color:var(--cyan);font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:950}.repo b{display:block;margin:9px 0;font-size:21px}
-.identity{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.identity-card b{font-size:15px}
-.why{padding:62px;border-radius:38px;border:1px solid rgba(120,221,255,.15);background:linear-gradient(135deg,rgba(10,18,34,.96),rgba(3,9,20,.92));box-shadow:0 30px 100px rgba(0,0,0,.45)}.why p{max-width:980px;font-size:21px;line-height:1.95;color:#b8c8db}
-footer{text-align:center;padding:44px 0 80px;color:#7e91ac}.footer-line{font-size:20px;color:var(--blue);margin-bottom:16px}
-@media(max-width:1220px){.hero,.constellation{grid-template-columns:1fr}.status{display:grid;grid-template-columns:1fr 1fr}.grid6{grid-template-columns:1fr 1fr 1fr}.state{grid-template-columns:1fr 1fr}.identity{grid-template-columns:1fr 1fr 1fr}}
-@media(max-width:720px){.links{display:none}.nav{flex-direction:column;align-items:flex-start;gap:14px}.copy{padding:32px}h1{font-size:64px}.grid6,.state,.identity,.status{grid-template-columns:1fr}.reactor{min-height:460px}.node{display:none}}
+.telemetry-item{
+  display:flex; align-items:center; gap:10px; white-space:nowrap;
+}
+.telemetry-dot{
+  width:6px; height:6px; border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 12px var(--cyan);
+  animation:pulse 2.8s var(--ease) infinite;
+}
+.telemetry-item:nth-child(2) .telemetry-dot{background:var(--orange); box-shadow:0 0 12px var(--orange); animation-delay:.4s}
+.telemetry-item:nth-child(4) .telemetry-dot{animation-delay:.8s}
+.telemetry-item:nth-child(5) .telemetry-dot{animation-delay:1.2s}
+@keyframes pulse{0%,100%{opacity:.6; transform:scale(1)}50%{opacity:1; transform:scale(1.3)}}
+@keyframes telemetryScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* HERO */
+.hero{
+  padding:120px 0 100px;
+  position:relative;
+}
+.hero-grid{
+  display:grid; grid-template-columns:1.05fr 1.3fr .95fr; gap:56px; align-items:center;
+}
+.hero-left h1{
+  font-size:clamp(48px,8vw,96px); line-height:.9; letter-spacing:-.03em; margin:0 0 24px;
+  font-weight:700;
+}
+.hero-left h1 span{display:block; color:var(--cyan); text-shadow:0 0 40px rgba(0,229,255,.35)}
+.thesis{
+  font-size:clamp(20px,2.2vw,28px); letter-spacing:-.01em; margin:0 0 20px; font-weight:600;
+  color:#fff;
+}
+.thesis em{font-style:normal; color:var(--orange)}
+.hero-left p{
+  color:var(--muted); font-size:17px; line-height:1.7; max-width:42ch; margin:0 0 36px;
+}
+.btn-row{display:flex; gap:14px; flex-wrap:wrap}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 22px; border-radius:999px; font-weight:600; font-size:15px;
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  border:1px solid var(--glass-border); backdrop-filter:blur(10px);
+  transition:.3s var(--ease); position:relative; overflow:hidden;
+}
+.btn::before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(200px 100px at var(--bx,50%) 0%, rgba(0,229,255,.25), transparent 70%);
+  opacity:0; transition:.3s;
+}
+.btn:hover{transform:translateY(-2px); border-color:rgba(0,229,255,.5); box-shadow:0 10px 40px rgba(0,229,255,.15)}
+.btn:hover::before{opacity:1}
+.btn.primary{background:linear-gradient(180deg, var(--cyan), #00b8cc); color:#00141a; border-color:transparent; box-shadow:0 0 40px rgba(0,229,255,.25)}
+.btn.primary:hover{box-shadow:0 0 60px rgba(0,229,255,.4)}
+.hero-center{position:relative; aspect-ratio:1/1; min-height:520px}
+#reactor{
+  position:absolute; inset:-10%; width:120%; height:120%;
+}
+.reactor-halo{
+  position:absolute; inset:12%; border-radius:50%;
+  background:radial-gradient(circle, rgba(0,229,255,.15), transparent 70%);
+  filter:blur(40px); animation:halo 8s ease-in-out infinite;
+}
+@keyframes halo{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.hero-right{
+  border-left:1px solid rgba(255,255,255,.08); padding-left:36px;
+}
+.infra-title{
+  font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin:0 0 24px;
+}
+.infra-list{list-style:none; margin:0; padding:0; display:grid; gap:18px}
+.infra-list li{
+  font-size:18px; line-height:1.4; color:#d8eaff; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.06);
+}
+.infra-list li:last-child{border:none; color:var(--orange); font-weight:600}
+.infra-list li strong{display:block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:6px}
+
+/* SECTION BASE */
+section{padding:140px 0; position:relative}
+.section-head{
+  max-width:1100px; margin:0 auto 80px; text-align:center;
+}
+.section-head h2{
+  font-size:clamp(36px,6vw,72px); line-height:1.05; letter-spacing:-.03em; margin:0 0 20px; font-weight:700;
+}
+.section-head p{color:var(--muted); font-size:18px; max-width:70ch; margin:0 auto}
+
+/* ARCHITECTURE */
+.arch-grid{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:20px;
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  padding:28px 24px;
+  backdrop-filter:blur(16px);
+  position:relative; overflow:hidden;
+  transition:.4s var(--ease);
+}
+.card::before{
+  content:""; position:absolute; inset:-1px;
+  background:linear-gradient(180deg, rgba(0,229,255,.4), transparent 40%);
+  opacity:0; transition:.4s;
+}
+.card:hover{transform:translateY(-6px); border-color:rgba(0,229,255,.5); box-shadow:var(--shadow)}
+.card:hover::before{opacity:.6}
+.card h3{margin:0 0 10px; font-size:20px; letter-spacing:-.01em}
+.card p{margin:0; color:var(--muted); font-size:15px; line-height:1.6}
+
+/* CONTINUITY FLOW */
+.flow-grid{
+  display:grid; grid-template-columns:repeat(6,1fr); gap:18px; margin-bottom:60px;
+}
+.flow-card{
+  background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07);
+  border-radius:20px; padding:32px 24px; position:relative; overflow:hidden;
+}
+.flow-card::after{
+  content:""; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--cyan), transparent);
+  opacity:.6;
+}
+.flow-num{
+  font-size:12px; letter-spacing:.18em; color:var(--cyan); margin-bottom:16px; font-weight:700;
+}
+.flow-title{font-size:24px; font-weight:700; letter-spacing:-.02em; margin:0 0 8px}
+.flow-desc{color:var(--muted); font-size:14px; margin:0}
+.metrics-grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
+}
+.metric{
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid var(--glass-border); border-radius:var(--radius);
+  padding:28px; backdrop-filter:blur(12px);
+}
+.metric-label{font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:14px}
+.metric-value{font-size:42px; font-weight:700; letter-spacing:-.03em; line-height:1}
+.metric-bar{
+  height:4px; background:rgba(255,255,255,.08); border-radius:4px; margin-top:18px; overflow:hidden;
+}
+.metric-bar span{
+  display:block; height:100%; width:var(--w,70%);
+  background:linear-gradient(90deg, var(--cyan), var(--orange));
+  box-shadow:0 0 20px rgba(0,229,255,.5);
+  animation:barPulse 3s ease-in-out infinite;
+}
+@keyframes barPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.4)}}
+
+/* ECOSYSTEM */
+.ecosystem-wrap{
+  display:grid; grid-template-columns:1.2fr .8fr; gap:60px; align-items:start;
+}
+.eco-map{
+  background:radial-gradient(600px 400px at 50% 50%, rgba(0,229,255,.05), transparent 70%);
+  border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:40px;
+  position:relative; overflow:hidden;
+}
+.eco-map svg{width:100%; height:auto; display:block}
+.node-core{filter:drop-shadow(0 0 30px rgba(0,229,255,.6))}
+.link{stroke:url(#linkGrad); stroke-width:1.5; stroke-dasharray:4 6; opacity:.7; animation:linkFlow 12s linear infinite}
+@keyframes linkFlow{to{stroke-dashoffset:-200}}
+.pulse-dot{fill:var(--orange); filter:drop-shadow(0 0 8px var(--orange))}
+.repo-list{display:grid; gap:16px}
+.repo-card{
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+  border-radius:16px; padding:20px 22px;
+  transition:.3s var(--ease);
+}
+.repo-card:hover{border-color:rgba(0,229,255,.5); transform:translateX(4px)}
+.repo-card h4{margin:0 0 6px; font-size:16px}
+.repo-card p{margin:0; color:var(--muted); font-size:14px}
+
+/* RESEARCH */
+.research-grid{
+  display:grid; grid-template-columns:repeat(6,1fr); gap:16px;
+}
+.research-card{
+  aspect-ratio:1/1; display:flex; flex-direction:column; justify-content:flex-end;
+  padding:20px; border-radius:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid var(--glass-border); position:relative; overflow:hidden;
+  transition:.3s var(--ease);
+}
+.research-card::before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(300px 200px at 100% 0%, rgba(0,229,255,.15), transparent 60%);
+  opacity:0; transition:.3s;
+}
+.research-card:hover{transform:translateY(-4px)}
+.research-card:hover::before{opacity:1}
+.research-card span{font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.research-card strong{font-size:20px; letter-spacing:-.01em}
+
+/* PHILOSOPHY */
+.philosophy{
+  padding:200px 0; text-align:center;
+  background:radial-gradient(800px 500px at 50% 50%, rgba(255,106,0,.06), transparent 70%);
+}
+.philosophy h2{
+  font-size:clamp(32px,5vw,56px); line-height:1.2; letter-spacing:-.02em; max-width:1100px; margin:0 auto;
+  font-weight:600; color:#eaf6ff; text-shadow:0 0 60px rgba(0,229,255,.12);
+}
+
+/* SAFE BOUNDARY */
+.boundary{
+  max-width:900px; margin:0 auto;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid rgba(255,106,0,.35);
+  border-radius:24px; padding:60px; backdrop-filter:blur(16px);
+  box-shadow:0 0 80px rgba(255,106,0,.08);
+}
+.boundary h3{font-size:32px; margin:0 0 20px; letter-spacing:-.02em}
+.boundary p{color:var(--muted); font-size:18px; line-height:1.7; margin:0}
+
+/* FOOTER */
+footer{
+  padding:120px 0 80px; text-align:center; position:relative;
+  background:linear-gradient(to top, rgba(2,6,15,1), rgba(2,6,15,.2));
+}
+.footer-reactor{
+  width:280px; height:280px; margin:0 auto 40px; position:relative; opacity:.5;
+}
+.footer-line{
+  font-size:14px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+}
+
+/* Reveal */
+.reveal{opacity:0; transform:translateY(30px); transition:1s var(--ease)}
+.reveal.in{opacity:1; transform:none}
+
+/* Responsive */
+@media(max-width:1200px){
+  .hero-grid{grid-template-columns:1fr 1.1fr; gap:40px}
+  .hero-right{grid-column:1/-1; border-left:none; border-top:1px solid rgba(255,255,255,.08); padding:36px 0 0; display:grid; grid-template-columns:repeat(2,1fr); gap:20px}
+  .arch-grid{grid-template-columns:repeat(3,1fr)}
+  .flow-grid{grid-template-columns:repeat(3,1fr)}
+  .metrics-grid{grid-template-columns:repeat(2,1fr)}
+  .ecosystem-wrap{grid-template-columns:1fr}
+  .research-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  .hero{padding:80px 0 60px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-center{min-height:420px}
+  .hero-right{display:block}
+  .arch-grid{grid-template-columns:1fr 1fr}
+  .flow-grid{grid-template-columns:1fr 1fr}
+  .section-head{margin-bottom:50px}
+  section{padding:100px 0}
+  .philosophy{padding:140px 0}
+  .boundary{padding:36px}
+}
+@media(max-width:520px){
+  .arch-grid,.flow-grid,.metrics-grid,.research-grid{grid-template-columns:1fr}
+  .telemetry-inner{height:38px}
+}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
-<div class="telemetry"><div class="track"><span class="blue">SIGNAL ACTIVE</span><span class="orange">THREAT DETECTED</span><span class="blue">RECOVERY READY</span><span class="blue">GRAPH STABLE</span><span class="orange">REBUILD IN PROGRESS</span><span class="blue">CONTINUITY MAINTAINED</span><span class="blue">SIGNAL ACTIVE</span><span class="orange">THREAT DETECTED</span><span class="blue">RECOVERY READY</span><span class="blue">GRAPH STABLE</span></div></div>
-<div class="wrap">
-<nav class="nav"><div class="brand"><div class="mark">⬡</div><div>XPADI-SGDS™<small>Survivability-Governed Data Systems</small></div></div><div class="links"><a href="#flow">Process</a><a href="#ecosystem">Ecosystem</a><a href="#research">Research</a><a href="#boundary">Boundary</a></div><div class="pill">Public Research Surface</div></nav>
-<section class="hero">
-<div class="glass copy"><div class="kicker"><i></i> Continuity Infrastructure</div><h1>XPADI<span>SGDS</span></h1><div class="thesis">Attack Success <strong>≠</strong> Data Loss</div><p class="lead">A survivability-governed infrastructure identity exploring deterministic reconstruction, recovery readiness, continuity intelligence, and post-damage operational resilience.</p><div class="actions"><a class="btn" href="#flow">Explore Process</a><a class="btn alt" href="#ecosystem">Explore Ecosystem</a></div></div>
-<div class="glass reactor"><div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="orbit o4"></div><div class="beam b1"></div><div class="beam b2"></div><div class="node n1"></div><div class="node n2"></div><div class="node n3"></div><div class="node n4"></div><div class="core"><div><small>Owner</small><b>RECOVERY</b><small style="margin-top:14px;color:#9db0c9">Continuity Reactor</small></div></div></div>
-<aside class="glass status"><div class="status-title">Infrastructure Reality</div><div class="status-item"><div class="icon">⬢</div><div><b>Replication Copies Corruption</b><p>Replication can duplicate destructive failure states.</p></div></div><div class="status-item"><div class="icon">▤</div><div><b>Backups Can Collapse</b><p>Recovery chains fail under deletion, encryption, dependency loss, or delay.</p></div></div><div class="status-item"><div class="icon">◎</div><div><b>Integrity ≠ Survivability</b><p>Checksums verify changes, not continuity after damage.</p></div></div><div class="status-thesis">CORE THESIS · Attack Success ≠ Data Loss</div></aside>
-</section>
-<section class="section" id="flow"><div class="eyebrow">Living Reconstruction Flow</div><h2>Failure enters. Continuity exits.</h2><div class="grid6"><div class="card"><div class="num">01</div><h3>DETECT</h3><p>Identify corruption, deletion, ransomware damage, or continuity weakness.</p></div><div class="card"><div class="num">02</div><h3>SPLIT</h3><p>Think in survivability-aware fragment structures instead of fragile full-copy dependency.</p></div><div class="card"><div class="num">03</div><h3>DISTRIBUTE</h3><p>Reduce single-point exposure and avoid one complete recoverable target.</p></div><div class="card"><div class="num">04</div><h3>REBUILD</h3><p>Recover through deterministic reconstruction rather than blind restore assumptions.</p></div><div class="card"><div class="num">05</div><h3>VERIFY</h3><p>Generate proof confidence and recovery readiness signals.</p></div><div class="card"><div class="num">06</div><h3>CONTINUE</h3><p>Move from incident recovery into survivable operational continuity.</p></div></div><div class="state"><div class="state-card"><h4>Recovery Readiness</h4><h3>97.2%</h3><p>Continuity reconstruction pathways active.</p></div><div class="state-card"><h4>Fragment Graph</h4><h3>STABLE</h3><p>Deterministic reconstruction graph connected.</p></div><div class="state-card"><h4>Survivability Signal</h4><h3>VERIFIED</h3><p>Operational continuity maintained.</p></div><div class="state-card"><h4>Owner State</h4><h3>ONLINE</h3><p>Recovery authority presence active.</p></div></div></section>
-<section class="section constellation" id="ecosystem"><div class="glass map"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="wire" x1="0" x2="1"><stop offset="0%" stop-color="#78ddff"/><stop offset="55%" stop-color="#28a7ff"/><stop offset="100%" stop-color="#ff8a24"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M450 300 C250 180 150 150 100 110" stroke="url(#wire)" stroke-width="4" stroke-dasharray="14 10" fill="none" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;-160" dur="5s" repeatCount="indefinite"/></path><path d="M450 300 C650 180 760 150 810 110" stroke="url(#wire)" stroke-width="4" stroke-dasharray="14 10" fill="none" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;-160" dur="5s" repeatCount="indefinite"/></path><path d="M450 300 C250 420 160 470 100 520" stroke="url(#wire)" stroke-width="4" stroke-dasharray="14 10" fill="none" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;-160" dur="5s" repeatCount="indefinite"/></path><path d="M450 300 C650 420 760 470 810 520" stroke="url(#wire)" stroke-width="4" stroke-dasharray="14 10" fill="none" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;-160" dur="5s" repeatCount="indefinite"/></path><rect x="302" y="218" width="296" height="164" rx="30" fill="rgba(8,14,28,.94)" stroke="url(#wire)" filter="url(#glow)"/><text x="450" y="294" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="white">XPADI</text><text x="450" y="334" text-anchor="middle" font-family="Arial" font-size="34" font-weight="900" fill="#78ddff">SGDS</text><g fill="rgba(12,22,40,.86)" stroke="#78ddff" stroke-width="2"><rect x="45" y="65" width="250" height="90" rx="22"/><rect x="610" y="65" width="250" height="90" rx="22"/><rect x="45" y="470" width="250" height="90" rx="22"/><rect x="610" y="470" width="250" height="90" rx="22"/><rect x="325" y="470" width="250" height="90" rx="22" stroke="#ff8a24"/></g><g font-family="Arial" font-size="17" font-weight="900" fill="white"><text x="170" y="112" text-anchor="middle">ProofCheck</text><text x="735" y="112" text-anchor="middle">Proof Engine</text><text x="170" y="522" text-anchor="middle">digital-lifeline</text><text x="735" y="522" text-anchor="middle">dfg-demo-lab</text><text x="450" y="522" text-anchor="middle">XLifelineAI</text></g></svg></div><div class="repo-list"><a class="repo" href="https://github.com/raajmandale/XPADI-ProofCheck"><small>Main Surface</small><b>XPADI-ProofCheck™</b><p>Recovery Intelligence and Survivability Proof surface.</p></a><a class="repo" href="https://github.com/raajmandale/XPADI_Proof_Engine_V1"><small>Proof Engine</small><b>XPADI_Proof_Engine_V1</b><p>Protect → attack → reconstruct → verify.</p></a><a class="repo" href="https://github.com/raajmandale/digital-lifeline"><small>Origin</small><b>digital-lifeline</b><p>Origin survivability architecture seed.</p></a><a class="repo" href="https://github.com/raajmandale/XLifelineAI"><small>AI Continuity</small><b>XLifelineAI</b><p>AI runtime continuity and memory resilience.</p></a><a class="repo" href="https://github.com/raajmandale/dfg-demo-lab"><small>Research</small><b>dfg-demo-lab</b><p>Deterministic Fragment Graph research/demo layer.</p></a></div></section>
-<section class="section" id="research"><div class="eyebrow">Research & Identity Layer</div><h2>Proof surfaces connect into a public credibility graph.</h2><div class="identity"><div class="identity-card"><b>GitHub</b><p>Code, proofs, demos, and public build evidence.</p></div><div class="identity-card"><b>Zenodo</b><p>DOI-backed preservation and research record continuity.</p></div><div class="identity-card"><b>SSRN</b><p>Public research distribution and survivability paper surface.</p></div><div class="identity-card"><b>ORCID</b><p>Researcher identity continuity and authorship graph.</p></div><div class="identity-card"><b>Wikidata</b><p>Structured identity backbone and external indexing layer.</p></div><div class="identity-card"><b>Website</b><p>Founder surface connecting projects, research, and proof artifacts.</p></div></div></section>
-<section class="section why"><div class="eyebrow">Why XPADI Exists</div><h2>Modern systems still assume recovery will work when pressure arrives.</h2><p>Failure is no longer rare. Deletion scales. Corruption propagates. Recovery assumptions collapse silently. Replication can duplicate damage. Backups can disappear. Continuity chains break under operational stress. XPADI-SGDS explores survivability after damage — not only prevention before it.</p></section>
-<section class="section glass" id="boundary"><div class="eyebrow">Public-safe boundary</div><h2>Shows direction, not private mechanism.</h2><p style="color:#b8c8db;font-size:19px;line-height:1.75;max-width:980px">This ultra-glass reactor surface communicates continuity philosophy, ecosystem structure, recovery posture, and proof/recovery direction without exposing proprietary recovery internals, authority logic, or sensitive reconstruction mechanisms.</p></section>
-<footer><div class="footer-line">Continuity is the Future. Survivability is the Foundation.</div>XPADI-SGDS™ · Ultra Glass Stable Reactor · Infrastructure Continuity Direction</footer>
+<div id="glowFollow"></div>
+
+<!-- TELEMETRY -->
+<div class="telemetry">
+  <div class="container telemetry-inner">
+    <div class="telemetry-track">
+      <div class="telemetry-item"><span class="telemetry-dot"></span> SIGNAL ACTIVE</div>
+      <div class="telemetry-item"><span class="telemetry-dot"></span> THREAT DETECTED</div>
+      <div class="telemetry-item"><span class="telemetry-dot"></span> RECOVERY READY</div>
+      <div class="telemetry-item"><span class="telemetry-dot"></span> GRAPH STABLE</div>
+      <div class="telemetry-item"><span class="telemetry-dot"></span> CONTINUITY MAINTAINED</div>
+      <div class="telemetry-item"><span class="telemetry-dot"></span> SIGNAL ACTIVE</div>
+      <div class="telemetry-item"><span class="telemetry-dot"></span> THREAT DETECTED</div>
+      <div class="telemetry-item"><span class="telemetry-dot"></span> RECOVERY READY</div>
+      <div class="telemetry-item"><span class="telemetry-dot"></span> GRAPH STABLE</div>
+      <div class="telemetry-item"><span class="telemetry-dot"></span> CONTINUITY MAINTAINED</div>
+    </div>
+  </div>
 </div>
+
+<!-- HERO -->
+<header class="hero container">
+  <div class="hero-grid">
+    <div class="hero-left reveal">
+      <h1>XPADI <span>SGDS</span></h1>
+      <div class="thesis">ATTACK SUCCESS <em>≠</em> DATA LOSS</div>
+      <p>Survivability-Governed Data Systems. Deterministic reconstruction after damage. Continuity infrastructure, fragment intelligence, and owner-authorized recovery that operates beyond storage dependency.</p>
+      <div class="btn-row">
+        <a href="#architecture" class="btn primary">Enter Reactor</a>
+        <a href="#ecosystem" class="btn">View Architecture</a>
+      </div>
+    </div>
+    <div class="hero-center reveal">
+      <div class="reactor-halo"></div>
+      <canvas id="reactor"></canvas>
+    </div>
+    <aside class="hero-right reveal">
+      <div class="infra-title">Infrastructure Reality</div>
+      <ul class="infra-list">
+        <li><strong>Replication</strong> Copies Corruption</li>
+        <li><strong>Backups</strong> Can Collapse</li>
+        <li><strong>Integrity</strong> ≠ Survivability</li>
+        <li>CORE THESIS<br/>Attack success does not have to equal data loss</li>
+      </ul>
+    </aside>
+  </div>
+</header>
+
+<!-- ARCHITECTURE -->
+<section id="architecture">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Recovery authority over storage dependency.</h2>
+      <p>Five architectural primitives form a survivability core. Each operates independently, verifies the others, and emits proof.</p>
+    </div>
+    <div class="arch-grid">
+      <div class="card reveal"><h3>Fragment Intelligence</h3><p>Content-aware splitting with cryptographic binding and lineage tracking.</p></div>
+      <div class="card reveal"><h3>DFG Layer</h3><p>Deterministic Fragment Graph enables reconstruction without full replication.</p></div>
+      <div class="card reveal"><h3>Reconstruction Engine</h3><p>Owner-authorized rebuild from minimal viable fragments under adversarial conditions.</p></div>
+      <div class="card reveal"><h3>Proof Verification</h3><p>Cryptographic attestations confirm integrity, provenance, and completeness.</p></div>
+      <div class="card reveal"><h3>Owner Authority</h3><p>Recovery policy, thresholds, and continuity decisions remain sovereign to owner.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTINUITY FLOW -->
+<section id="continuity">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Failure enters. Continuity exits.</h2>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-card reveal"><div class="flow-num">01</div><div class="flow-title">DETECT</div><p class="flow-desc">Anomaly and damage signals ingested from multiple surfaces.</p></div>
+      <div class="flow-card reveal"><div class="flow-num">02</div><div class="flow-title">SPLIT</div><p class="flow-desc">Deterministic fragmentation with metadata binding.</p></div>
+      <div class="flow-card reveal"><div class="flow-num">03</div><div class="flow-title">DISTRIBUTE</div><p class="flow-desc">Survivability-aware placement across failure domains.</p></div>
+      <div class="flow-card reveal"><div class="flow-num">04</div><div class="flow-title">REBUILD</div><p class="flow-desc">Minimal fragment set reconstruction under owner policy.</p></div>
+      <div class="flow-card reveal"><div class="flow-num">05</div><div class="flow-title">VERIFY</div><p class="flow-desc">Proof generation and cross-check against graph.</p></div>
+      <div class="flow-card reveal"><div class="flow-num">06</div><div class="flow-title">CONTINUE</div><p class="flow-desc">Operational resumption with audit trail.</p></div>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric reveal"><div class="metric-label">Recovery Readiness</div><div class="metric-value">97.4%</div><div class="metric-bar"><span style="--w:97%"></span></div></div>
+      <div class="metric reveal"><div class="metric-label">Fragment Graph</div><div class="metric-value">Stable</div><div class="metric-bar"><span style="--w:88%"></span></div></div>
+      <div class="metric reveal"><div class="metric-label">Survivability Signal</div><div class="metric-value">High</div><div class="metric-bar"><span style="--w:92%"></span></div></div>
+      <div class="metric reveal"><div class="metric-label">Owner State</div><div class="metric-value">Authorized</div><div class="metric-bar"><span style="--w:100%"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section id="ecosystem">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Living Survivability Ecosystem</h2>
+      <p>Research surfaces, verification engines, and lifeline protocols orbit the core reactor.</p>
+    </div>
+    <div class="ecosystem-wrap">
+      <div class="eco-map reveal">
+        <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" aria-label="Ecosystem reactor map">
+          <defs>
+            <linearGradient id="linkGrad" x1="0" x2="1"><stop offset="0%" stop-color="#00e5ff"/><stop offset="100%" stop-color="#ff6a00"/></linearGradient>
+            <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <!-- links -->
+          <path class="link" d="M400 260 C 300 180, 200, 140 160"/>
+          <path class="link" d="M400 260 C 320 320, 220 360, 180 420"/>
+          <path class="link" d="M400 260 C 480 200, 580 190, 660 150"/>
+          <path class="link" d="M400 260 C 500 300, 600 340, 680 380"/>
+          <path class="link" d="M400 260 C 380 140, 420 80, 400 40"/>
+          <!-- nodes -->
+          <g class="node-core" filter="url(#glow)">
+            <circle cx="400" cy="260" r="48" fill="rgba(0,229,255,.12)" stroke="#00e5ff" stroke-width="2"/>
+            <circle cx="400" cy="260" r="22" fill="#00e5ff"/>
+            <text x="400" y="328" text-anchor="middle" fill="#8aa2b8" font-size="13" letter-spacing="0.1em">XPADI-SGDS</text>
+          </g>
+          <g>
+            <circle cx="140" cy="160" r="16" fill="#02060f" stroke="#00e5ff" stroke-width="1.5"/><text x="140" y="130" text-anchor="middle" fill="#eaf6ff" font-size="12">XPADI-ProofCheck</text>
+          </g>
+          <g>
+            <circle cx="180" cy="420" r="16" fill="#02060f" stroke="#00e5ff" stroke-width="1.5"/><text x="180" y="450" text-anchor="middle" fill="#eaf6ff" font-size="12">XPADI_Proof_Engine_V1</text>
+          </g>
+          <g>
+            <circle cx="660" cy="150" r="16" fill="#02060f" stroke="#ff6a00" stroke-width="1.5"/><text x="660" y="120" text-anchor="middle" fill="#eaf6ff" font-size="12">digital-lifeline</text>
+          </g>
+          <g>
+            <circle cx="680" cy="380" r="16" fill="#02060f" stroke="#ff6a00" stroke-width="1.5"/><text x="680" y="410" text-anchor="middle" fill="#eaf6ff" font-size="12">XLifelineAI</text>
+          </g>
+          <g>
+            <circle cx="400" cy="40" r="16" fill="#02060f" stroke="#00e5ff" stroke-width="1.5"/><text x="400" y="20" text-anchor="middle" fill="#eaf6ff" font-size="12">dfg-demo-lab</text>
+          </g>
+          <!-- pulses -->
+          <circle class="pulse-dot" r="4"><animateMotion dur="6s" repeatCount="indefinite" path="M400 260 C 300 180, 200 200, 140 160"/></circle>
+          <circle class="pulse-dot" r="4"><animateMotion dur="7s" repeatCount="indefinite" path="M400 260 C 500 300, 600 340, 680 380"/></circle>
+          <circle class="pulse-dot" r="4"><animateMotion dur="5s" repeatCount="indefinite" path="M400 260 C 480 200, 580 190, 660 150"/></circle>
+        </svg>
+      </div>
+      <div class="repo-list reveal">
+        <div class="repo-card"><h4>XPADI-ProofCheck</h4><p>Public verification surface for reconstruction proofs and integrity attestations.</p></div>
+        <div class="repo-card"><h4>XPADI_Proof_Engine_V1</h4><p>Deterministic proof generation for fragment graphs and recovery events.</p></div>
+        <div class="repo-card"><h4>digital-lifeline</h4><p>Continuity protocol scaffolding for post-damage operational resilience.</p></div>
+        <div class="repo-card"><h4>XLifelineAI</h4><p>Intelligence layer for threat-aware survivability orchestration.</p></div>
+        <div class="repo-card"><h4>dfg-demo-lab</h4><p>Interactive demonstrations of fragment intelligence and reconstruction.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Proof surfaces connect into a public credibility graph.</h2>
+    </div>
+    <div class="research-grid">
+      <a class="research-card reveal" href="#"><span>Code</span><strong>GitHub</strong></a>
+      <a class="research-card reveal" href="#"><span>Archive</span><strong>Zenodo</strong></a>
+      <a class="research-card reveal" href="#"><span>Paper</span><strong>SSRN</strong></a>
+      <a class="research-card reveal" href="#"><span>Identity</span><strong>ORCID</strong></a>
+      <a class="research-card reveal" href="#"><span>Knowledge</span><strong>Wikidata</strong></a>
+      <a class="research-card reveal" href="#"><span>Surface</span><strong>Website</strong></a>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="container reveal">
+    <h2>Modern systems still assume recovery will work when pressure arrives.</h2>
+  </div>
+</section>
+
+<!-- SAFE BOUNDARY -->
+<section>
+  <div class="container">
+    <div class="boundary reveal">
+      <h3>Shows direction, not private mechanism.</h3>
+      <p>This is a public research surface for XPADI-SGDS™. It articulates survivability principles, architectural direction, and verifiable proof surfaces. Sensitive reconstruction logic, cryptographic parameters, and operational deployment details remain private to preserve security and owner sovereignty.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-reactor">
+    <canvas id="footerReactor" width="280" height="280"></canvas>
+  </div>
+  <div class="footer-line">Continuity is the Future. Survivability is the Foundation.</div>
+</footer>
+
+<script>
+(() => {
+  // Glow follow
+  const glow = document.getElementById('glowFollow');
+  let mx = 0, my = 0, tx = 0, ty = 0;
+  window.addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; }, {passive:true});
+  function glowLoop(){
+    mx += (tx - mx) * 0.08;
+    my += (ty - my) * 0.08;
+    glow.style.setProperty('--mx', mx + 'px');
+    glow.style.setProperty('--my', my + 'px');
+    requestAnimationFrame(glowLoop);
+  }
+  glowLoop();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=> {
+    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+  }, {threshold:.2});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Parallax subtle
+  let lastY = 0;
+  window.addEventListener('scroll', ()=>{
+    const y = window.scrollY;
+    document.querySelectorAll('.hero-center, .reactor-halo').forEach((el,i)=>{
+      el.style.transform = `translateY(${y * (0.02 + i*0.01)}px)`;
+    });
+    lastY = y;
+  }, {passive:true});
+
+  // REACTOR CANVAS
+  const canvas = document.getElementById('reactor');
+  const ctx = canvas.getContext('2d');
+  const dpr = Math.min(window.devicePixelRatio||1,2);
+  let W,H,CX,CY, t=0;
+  const rings = [
+    {r:180, w:1.5, speed:0.0003, dash:[2,12], glow:'#00e5ff'},
+    {r:230, w:1.2, speed:-0.0002, dash:[4,16], glow:'#00e5ff'},
+    {r:285, w:1, speed:0.00015, dash:[1,10], glow:'#ff6a00'},
+    {r:340, w:0.8, speed:-0.0001, dash:[3,14], glow:'#00e5ff'}
+  ];
+  const nodes = Array.from({length:18}, (_,i)=>({
+    angle: Math.random()*Math.PI*2,
+    radius: 190 + Math.random()*140,
+    speed: (0.0002 + Math.random()*0.0003)*(Math.random()<.5?-1:1),
+    size: 2 + Math.random()*3
+  }));
+  const particles = Array.from({length:120}, ()=>({
+    angle: Math.random()*Math.PI*2,
+    radius: 160 + Math.random()*200,
+    speed: 0.001 + Math.random()*0.002,
+    alpha: 0.3 + Math.random()*0.7
+  }));
+
+  function resize(){
+    const rect = canvas.getBoundingClientRect();
+    W = rect.width; H = rect.height;
+    canvas.width = W*dpr; canvas.height = H*dpr;
+    canvas.style.width = W+'px'; canvas.style.height = H+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    CX = W/2; CY = H/2;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function draw(){
+    t+=1;
+    ctx.clearRect(0,0,W,H);
+    // Core glow
+    const coreGrad = ctx.createRadialGradient(CX,CY,0,CX,CY,120);
+    coreGrad.addColorStop(0,'rgba(0,229,255,.35)');
+    coreGrad.addColorStop(1,'rgba(0,229,255,0)');
+    ctx.fillStyle = coreGrad;
+    ctx.beginPath(); ctx.arc(CX,CY,120,0,Math.PI*2); ctx.fill();
+
+    // Particles
+    ctx.save();
+    ctx.translate(CX,CY);
+    particles.forEach(p=>{
+      p.angle += p.speed;
+      const x = Math.cos(p.angle)*p.radius;
+      const y = Math.sin(p.angle)*p.radius;
+      ctx.globalAlpha = p.alpha * (0.6 + 0.4*Math.sin(t*0.01+p.radius));
+      ctx.fillStyle = '#00e5ff';
+      ctx.beginPath(); ctx.arc(x,y,1.2,0,Math.PI*2); ctx.fill();
+    });
+    ctx.restore();
+    ctx.globalAlpha = 1;
+
+    // Rings
+    rings.forEach((ring,i)=>{
+      ctx.save();
+      ctx.translate(CX,CY);
+      ctx.rotate(t*ring.speed);
+      ctx.strokeStyle = ring.glow;
+      ctx.lineWidth = ring.w;
+      ctx.setLineDash(ring.dash);
+      ctx.shadowColor = ring.glow;
+      ctx.shadowBlur = 18;
+      ctx.beginPath();
+      ctx.arc(0,0,ring.r,0,Math.PI*2);
+      ctx.stroke();
+      ctx.restore();
+    });
+
+    // Nodes orbiting
+    nodes.forEach(n=>{
+      n.angle += n.speed;
+      const x = CX + Math.cos(n.angle)*n.radius;
+      const y = CY + Math.sin(n.angle)*n.radius;
+      ctx.fillStyle = '#ff6a00';
+      ctx.shadowColor = '#ff6a00';
+      ctx.shadowBlur = 12;
+      ctx.beginPath(); ctx.arc(x,y,n.size,0,Math.PI*2); ctx.fill();
+      // trail
+      ctx.strokeStyle = 'rgba(255,106,0,.15)';
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(CX,CY); ctx.lineTo(x,y); ctx.stroke();
+    });
+
+    // Core
+    ctx.fillStyle = '#00e5ff';
+    ctx.shadowColor = '#00e5ff';
+    ctx.shadowBlur = 30;
+    ctx.beginPath(); ctx.arc(CX,CY,28 + Math.sin(t*0.02)*2,0,Math.PI*2); ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = 'rgba(0,229,255,.4)';
+    ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(CX,CY,46,0,Math.PI*2); ctx.stroke();
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  // Footer mini reactor
+  const fCanvas = document.getElementById('footerReactor');
+  const fctx = fCanvas.getContext('2d');
+  const FR = 140;
+  let ft=0;
+  function fdraw(){
+    ft+=1;
+    fctx.clearRect(0,0,280,280);
+    fctx.save();
+    fctx.translate(140,140);
+    fctx.rotate(ft*0.001);
+    fctx.strokeStyle='rgba(0,229,255,.3)';
+    fctx.lineWidth=1;
+    for(let i=0;i<3;i++){
+      fctx.beginPath(); fctx.arc(0,0,50+i*30,0,Math.PI*2); fctx.stroke();
+    }
+    fctx.restore();
+    fctx.fillStyle='rgba(0,229,255,.8)';
+    fctx.shadowColor='#00e5ff'; fctx.shadowBlur=20;
+    fctx.beginPath(); fctx.arc(140,140,12+Math.sin(ft*0.05)*2,0,Math.PI*2); fctx.fill();
+    requestAnimationFrame(fdraw);
+  }
+  fdraw();
+
+  // Button hover glow position
+  document.querySelectorAll('.btn').forEach(btn=>{
+    btn.addEventListener('pointermove', e=>{
+      const r = btn.getBoundingClientRect();
+      btn.style.setProperty('--bx', ((e.clientX-r.left)/r.width*100)+'%');
+    });
+  });
+
+})();
+</script>
 </body>
 </html>
-<footer class="xpadi-footer">
-    <div class="footer-grid"></div>
-
-    <div class="footer-content">
-        <div class="footer-title">
-            XPADI-SGDS™
-        </div>
-
-        <div class="footer-sub">
-            Survivability-Governed Data Systems
-        </div>
-
-        <div class="footer-signal">
-            ATTACK SUCCESS ≠ DATA LOSS
-        </div>
-
-        <div class="footer-links">
-            <a href="../README.md">README</a>
-            <a href="../docs/ecosystem-map.md">Ecosystem</a>
-            <a href="../assets/svg/hero.svg">SVG Reactor</a>
-        </div>
-    </div>
-</footer>
